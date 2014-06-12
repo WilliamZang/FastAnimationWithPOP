@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8218950AB61C408B9B2C4E5D /* libPods-FastAnimationWithPopTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CE98684FED499A90B71F4F /* libPods-FastAnimationWithPopTests.a */; };
+		B3ABE5A86C7B4D3AA340B376 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6577A3926EAF40D1852ACD35 /* libPods.a */; };
+		B907A69C19499B9A00AAB5F8 /* FastAnimationWithPopSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = B907A69B19499B9A00AAB5F8 /* FastAnimationWithPopSpec.mm */; };
+		B93C899C194998000012FDB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93C899B194998000012FDB0 /* Foundation.framework */; };
+		B93C89A1194998000012FDB0 /* FastAnimationWithPop.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B93C89A0194998000012FDB0 /* FastAnimationWithPop.h */; };
+		B93C89A3194998000012FDB0 /* FastAnimationWithPop.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C89A2194998000012FDB0 /* FastAnimationWithPop.m */; };
+		B93C89AA194998000012FDB0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93C89A9194998000012FDB0 /* XCTest.framework */; };
+		B93C89AB194998000012FDB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93C899B194998000012FDB0 /* Foundation.framework */; };
+		B93C89AD194998000012FDB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93C89AC194998000012FDB0 /* UIKit.framework */; };
+		B93C89B0194998000012FDB0 /* libFastAnimationWithPop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B93C8998194998000012FDB0 /* libFastAnimationWithPop.a */; };
+		B93C89B6194998000012FDB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B93C89B4194998000012FDB0 /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B93C89AE194998000012FDB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B93C8990194998000012FDB0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B93C8997194998000012FDB0;
+			remoteInfo = FastAnimationWithPop;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B93C8996194998000012FDB0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				B93C89A1194998000012FDB0 /* FastAnimationWithPop.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		05CE98684FED499A90B71F4F /* libPods-FastAnimationWithPopTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FastAnimationWithPopTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CF86E5A4E29497E8A1B9D39 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		6577A3926EAF40D1852ACD35 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DFC50BE41314E0098716D86 /* Pods-FastAnimationWithPopTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastAnimationWithPopTests.xcconfig"; path = "Pods/Pods-FastAnimationWithPopTests.xcconfig"; sourceTree = "<group>"; };
+		B907A69B19499B9A00AAB5F8 /* FastAnimationWithPopSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FastAnimationWithPopSpec.mm; sourceTree = "<group>"; };
+		B93C8998194998000012FDB0 /* libFastAnimationWithPop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFastAnimationWithPop.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B93C899B194998000012FDB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B93C899F194998000012FDB0 /* FastAnimationWithPop-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FastAnimationWithPop-Prefix.pch"; sourceTree = "<group>"; };
+		B93C89A0194998000012FDB0 /* FastAnimationWithPop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FastAnimationWithPop.h; sourceTree = "<group>"; };
+		B93C89A2194998000012FDB0 /* FastAnimationWithPop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FastAnimationWithPop.m; sourceTree = "<group>"; };
+		B93C89A8194998000012FDB0 /* FastAnimationWithPopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastAnimationWithPopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B93C89A9194998000012FDB0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B93C89AC194998000012FDB0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B93C89B3194998000012FDB0 /* FastAnimationWithPopTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FastAnimationWithPopTests-Info.plist"; sourceTree = "<group>"; };
+		B93C89B5194998000012FDB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B93C8995194998000012FDB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B93C899C194998000012FDB0 /* Foundation.framework in Frameworks */,
+				B3ABE5A86C7B4D3AA340B376 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B93C89A5194998000012FDB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B93C89B0194998000012FDB0 /* libFastAnimationWithPop.a in Frameworks */,
+				B93C89AA194998000012FDB0 /* XCTest.framework in Frameworks */,
+				B93C89AD194998000012FDB0 /* UIKit.framework in Frameworks */,
+				B93C89AB194998000012FDB0 /* Foundation.framework in Frameworks */,
+				8218950AB61C408B9B2C4E5D /* libPods-FastAnimationWithPopTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B93C898F194998000012FDB0 = {
+			isa = PBXGroup;
+			children = (
+				B93C899D194998000012FDB0 /* FastAnimationWithPop */,
+				B93C89B1194998000012FDB0 /* FastAnimationWithPopTests */,
+				B93C899A194998000012FDB0 /* Frameworks */,
+				B93C8999194998000012FDB0 /* Products */,
+				0CF86E5A4E29497E8A1B9D39 /* Pods.xcconfig */,
+				8DFC50BE41314E0098716D86 /* Pods-FastAnimationWithPopTests.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		B93C8999194998000012FDB0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B93C8998194998000012FDB0 /* libFastAnimationWithPop.a */,
+				B93C89A8194998000012FDB0 /* FastAnimationWithPopTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B93C899A194998000012FDB0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B93C899B194998000012FDB0 /* Foundation.framework */,
+				B93C89A9194998000012FDB0 /* XCTest.framework */,
+				B93C89AC194998000012FDB0 /* UIKit.framework */,
+				6577A3926EAF40D1852ACD35 /* libPods.a */,
+				05CE98684FED499A90B71F4F /* libPods-FastAnimationWithPopTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B93C899D194998000012FDB0 /* FastAnimationWithPop */ = {
+			isa = PBXGroup;
+			children = (
+				B93C89A0194998000012FDB0 /* FastAnimationWithPop.h */,
+				B93C89A2194998000012FDB0 /* FastAnimationWithPop.m */,
+				B93C899E194998000012FDB0 /* Supporting Files */,
+			);
+			path = FastAnimationWithPop;
+			sourceTree = "<group>";
+		};
+		B93C899E194998000012FDB0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B93C899F194998000012FDB0 /* FastAnimationWithPop-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B93C89B1194998000012FDB0 /* FastAnimationWithPopTests */ = {
+			isa = PBXGroup;
+			children = (
+				B93C89B2194998000012FDB0 /* Supporting Files */,
+				B907A69B19499B9A00AAB5F8 /* FastAnimationWithPopSpec.mm */,
+			);
+			path = FastAnimationWithPopTests;
+			sourceTree = "<group>";
+		};
+		B93C89B2194998000012FDB0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B93C89B3194998000012FDB0 /* FastAnimationWithPopTests-Info.plist */,
+				B93C89B4194998000012FDB0 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B93C8997194998000012FDB0 /* FastAnimationWithPop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B93C89BB194998000012FDB0 /* Build configuration list for PBXNativeTarget "FastAnimationWithPop" */;
+			buildPhases = (
+				C2C6D19246BE417B9277EC9C /* Check Pods Manifest.lock */,
+				B93C8994194998000012FDB0 /* Sources */,
+				B93C8995194998000012FDB0 /* Frameworks */,
+				B93C8996194998000012FDB0 /* CopyFiles */,
+				FB66698A063A4352885D0C20 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FastAnimationWithPop;
+			productName = FastAnimationWithPop;
+			productReference = B93C8998194998000012FDB0 /* libFastAnimationWithPop.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B93C89A7194998000012FDB0 /* FastAnimationWithPopTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B93C89BE194998000012FDB0 /* Build configuration list for PBXNativeTarget "FastAnimationWithPopTests" */;
+			buildPhases = (
+				8688209C08F4470FB52569C7 /* Check Pods Manifest.lock */,
+				B93C89A4194998000012FDB0 /* Sources */,
+				B93C89A5194998000012FDB0 /* Frameworks */,
+				B93C89A6194998000012FDB0 /* Resources */,
+				C4A324B182214F6999310227 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B93C89AF194998000012FDB0 /* PBXTargetDependency */,
+			);
+			name = FastAnimationWithPopTests;
+			productName = FastAnimationWithPopTests;
+			productReference = B93C89A8194998000012FDB0 /* FastAnimationWithPopTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B93C8990194998000012FDB0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = WilliamZang;
+			};
+			buildConfigurationList = B93C8993194998000012FDB0 /* Build configuration list for PBXProject "FastAnimationWithPop" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B93C898F194998000012FDB0;
+			productRefGroup = B93C8999194998000012FDB0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B93C8997194998000012FDB0 /* FastAnimationWithPop */,
+				B93C89A7194998000012FDB0 /* FastAnimationWithPopTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B93C89A6194998000012FDB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B93C89B6194998000012FDB0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8688209C08F4470FB52569C7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C2C6D19246BE417B9277EC9C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C4A324B182214F6999310227 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-FastAnimationWithPopTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB66698A063A4352885D0C20 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B93C8994194998000012FDB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B93C89A3194998000012FDB0 /* FastAnimationWithPop.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B93C89A4194998000012FDB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B907A69C19499B9A00AAB5F8 /* FastAnimationWithPopSpec.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B93C89AF194998000012FDB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B93C8997194998000012FDB0 /* FastAnimationWithPop */;
+			targetProxy = B93C89AE194998000012FDB0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B93C89B4194998000012FDB0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B93C89B5194998000012FDB0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B93C89B9194998000012FDB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B93C89BA194998000012FDB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B93C89BC194998000012FDB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CF86E5A4E29497E8A1B9D39 /* Pods.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/FastAnimationWithPop.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FastAnimationWithPop/FastAnimationWithPop-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B93C89BD194998000012FDB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CF86E5A4E29497E8A1B9D39 /* Pods.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/FastAnimationWithPop.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FastAnimationWithPop/FastAnimationWithPop-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B93C89BF194998000012FDB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DFC50BE41314E0098716D86 /* Pods-FastAnimationWithPopTests.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FastAnimationWithPop/FastAnimationWithPop-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FastAnimationWithPopTests/FastAnimationWithPopTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		B93C89C0194998000012FDB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DFC50BE41314E0098716D86 /* Pods-FastAnimationWithPopTests.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FastAnimationWithPop/FastAnimationWithPop-Prefix.pch";
+				INFOPLIST_FILE = "FastAnimationWithPopTests/FastAnimationWithPopTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B93C8993194998000012FDB0 /* Build configuration list for PBXProject "FastAnimationWithPop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B93C89B9194998000012FDB0 /* Debug */,
+				B93C89BA194998000012FDB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B93C89BB194998000012FDB0 /* Build configuration list for PBXNativeTarget "FastAnimationWithPop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B93C89BC194998000012FDB0 /* Debug */,
+				B93C89BD194998000012FDB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B93C89BE194998000012FDB0 /* Build configuration list for PBXNativeTarget "FastAnimationWithPopTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B93C89BF194998000012FDB0 /* Debug */,
+				B93C89C0194998000012FDB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B93C8990194998000012FDB0 /* Project object */;
+}
