@@ -31,11 +31,11 @@ describe(@"UIView+FastAnimation", ^{
         targetView.animationType = type;
         expect(targetView.animationType).to.equal(type);
         NSNumber *value1 = [NSNumber numberWithDouble:3.15];
-        NSNumber *value2 = [NSNumber numberWithDouble:5.25];
+
         targetView.delay = value1.doubleValue;
-        targetView.duration = value2.doubleValue;
+
         expect(@(targetView.delay)).to.equal(value1);
-        expect(@(targetView.duration)).to.equal(value2);
+
     });  
     
     it(@"Normal awakeFromNib", ^{
@@ -44,7 +44,7 @@ describe(@"UIView+FastAnimation", ^{
     
     it(@"set not exists class", ^{
         targetView.animationType = @"NotExistsClass";
-        targetView.duration = 1.0;
+
         BOOL hasAssert = NO;
         @try {
             [targetView awakeFromNib];
@@ -58,14 +58,14 @@ describe(@"UIView+FastAnimation", ^{
     
     it(@"add test animation with full class name", ^{
        targetView.animationType = @"FAAnimationTest";
-        targetView.duration = 1.0;
+
         [targetView awakeFromNib];
         expect([FAAnimationTest animationHasPerform]).will.beTruthy();
     });
     
     it(@"add test animation with short name", ^{
         targetView.animationType = @"Test";
-        targetView.duration = 1.0;
+
         [targetView awakeFromNib];
         expect([FAAnimationTest animationHasPerform]).will.beTruthy();
     });

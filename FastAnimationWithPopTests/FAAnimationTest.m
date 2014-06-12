@@ -16,7 +16,7 @@ static BOOL g_animationHasPerform = NO;
     return g_animationHasPerform;
 }
 
-+ (void)performAnimation:(id)view after:(NSTimeInterval)delay duration:(NSTimeInterval)duration
++ (void)performAnimation:(id)view
 {
     g_animationHasPerform = YES;
 }

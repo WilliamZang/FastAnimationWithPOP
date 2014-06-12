@@ -10,5 +10,5 @@
 
 @protocol FastAnimationProtocol <NSObject>
 
-+ (void)performAnimation:(UIView *)view after:(NSTimeInterval)delay duration:(NSTimeInterval)duration;
++ (void)performAnimation:(UIView *)view;
 @end

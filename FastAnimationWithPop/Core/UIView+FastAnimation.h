@@ -11,6 +11,11 @@
 @interface UIView (FastAnimation)
 
 @property (nonatomic, copy) NSString *animationType;
+@property (nonatomic, assign) CGFloat springBounciness;
+@property (nonatomic, assign) CGFloat springSpeed;
+@property (nonatomic, assign) CGFloat dynamicsTension;
+@property (nonatomic, assign) CGFloat dynamicsFriction;
+@property (nonatomic, assign) CGFloat dynamicsMass;
 @property (nonatomic, assign) NSTimeInterval delay;
-@property (nonatomic, assign) NSTimeInterval duration;
+
 @end

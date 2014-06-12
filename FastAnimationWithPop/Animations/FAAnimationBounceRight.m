@@ -7,16 +7,22 @@
 //
 
 #import "FAAnimationBounceRight.h"
+#import "UIView+FastAnimation.h"
 
 @implementation FAAnimationBounceRight
 
-+ (void)performAnimation:(UIView *)view after:(NSTimeInterval)delay duration:(NSTimeInterval)duration
++ (void)performAnimation:(UIView *)view
 {
-    POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
+    POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerTranslationX];
     animation.fromValue = @(-300);
-    animation.toValue = @(view.frame.origin.x);
-    animation.beginTime = delay;
-    [view pop_addAnimation:animation forKey:@"BounceRight"];
+    animation.toValue = @(0);
+    animation.springBounciness = view.springBounciness;
+    animation.springSpeed = view.springSpeed;
+//    animation.dynamicsTension = view.dynamicsTension;
+//    animation.dynamicsFriction = view.dynamicsFriction;
+//    animation.dynamicsMass = view.dynamicsMass;
+
+    [view.layer pop_addAnimation:animation forKey:@"BounceRight"];
     
 }
 @end
