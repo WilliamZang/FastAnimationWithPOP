@@ -55,10 +55,10 @@ static void *DurationKey = &DurationKey;
             animationClass = NSClassFromString([@"FAAnimation" stringByAppendingString:self.animationType]);
         }
         NSAssert([animationClass conformsToProtocol:@protocol(FastAnimationProtocol)], @"The property 'animationType' must a class name and conforms protocol 'FastAnmationProtocol'");
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [animationClass performAnimation:self duration:self.duration];
-        });
-        
+        NSAssert(self.delay > -0.0000001, @"property 'delay' must > 0");
+        [animationClass performAnimation:self after:self.delay duration:self.duration];
+
+
         
     }
 }

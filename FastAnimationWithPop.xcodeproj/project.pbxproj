@@ -13,6 +13,7 @@
 		B907A6E21949A52500AAB5F8 /* UIView+FastAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = B907A6E11949A52500AAB5F8 /* UIView+FastAnimation.m */; };
 		B907A6E51949ADAB00AAB5F8 /* UIView+FastAnimationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B907A6E41949ADAB00AAB5F8 /* UIView+FastAnimationSpec.m */; };
 		B907A6E81949B24F00AAB5F8 /* FAAnimationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B907A6E71949B24F00AAB5F8 /* FAAnimationTest.m */; };
+		B907A6EB1949B51400AAB5F8 /* FAAnimationBounceRight.m in Sources */ = {isa = PBXBuildFile; fileRef = B907A6EA1949B51400AAB5F8 /* FAAnimationBounceRight.m */; };
 		B93C899C194998000012FDB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93C899B194998000012FDB0 /* Foundation.framework */; };
 		B93C89A1194998000012FDB0 /* FastAnimationWithPop.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B93C89A0194998000012FDB0 /* FastAnimationWithPop.h */; };
 		B93C89A3194998000012FDB0 /* FastAnimationWithPop.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C89A2194998000012FDB0 /* FastAnimationWithPop.m */; };
@@ -58,6 +59,8 @@
 		B907A6E41949ADAB00AAB5F8 /* UIView+FastAnimationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FastAnimationSpec.m"; sourceTree = "<group>"; };
 		B907A6E61949B24F00AAB5F8 /* FAAnimationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAAnimationTest.h; sourceTree = "<group>"; };
 		B907A6E71949B24F00AAB5F8 /* FAAnimationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAAnimationTest.m; sourceTree = "<group>"; };
+		B907A6E91949B51400AAB5F8 /* FAAnimationBounceRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAAnimationBounceRight.h; sourceTree = "<group>"; };
+		B907A6EA1949B51400AAB5F8 /* FAAnimationBounceRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAAnimationBounceRight.m; sourceTree = "<group>"; };
 		B93C8998194998000012FDB0 /* libFastAnimationWithPop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFastAnimationWithPop.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B93C899B194998000012FDB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B93C899F194998000012FDB0 /* FastAnimationWithPop-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FastAnimationWithPop-Prefix.pch"; sourceTree = "<group>"; };
@@ -98,6 +101,8 @@
 		B907A6DE1949A50000AAB5F8 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				B907A6E91949B51400AAB5F8 /* FAAnimationBounceRight.h */,
+				B907A6EA1949B51400AAB5F8 /* FAAnimationBounceRight.m */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 			files = (
 				B93C89A3194998000012FDB0 /* FastAnimationWithPop.m in Sources */,
 				B907A6E21949A52500AAB5F8 /* UIView+FastAnimation.m in Sources */,
+				B907A6EB1949B51400AAB5F8 /* FAAnimationBounceRight.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

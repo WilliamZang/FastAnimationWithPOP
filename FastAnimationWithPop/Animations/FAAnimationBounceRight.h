@@ -1,5 +1,5 @@
 //
-//  FastAnimation.h
+//  FAAnimationBounceRight.h
 //  FastAnimationWithPop
 //
 //  Created by ZangChengwei on 14-6-12.
@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FastAnimationProtocol.h"
+@interface FAAnimationBounceRight : NSObject<FastAnimationProtocol>
 
-@protocol FastAnimationProtocol <NSObject>
-
-+ (void)performAnimation:(UIView *)view after:(NSTimeInterval)delay duration:(NSTimeInterval)duration;
 @end
