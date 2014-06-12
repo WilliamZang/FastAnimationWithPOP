@@ -10,6 +10,7 @@
 		8218950AB61C408B9B2C4E5D /* libPods-FastAnimationWithPopTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CE98684FED499A90B71F4F /* libPods-FastAnimationWithPopTests.a */; };
 		B3ABE5A86C7B4D3AA340B376 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6577A3926EAF40D1852ACD35 /* libPods.a */; };
 		B907A69C19499B9A00AAB5F8 /* FastAnimationWithPopSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = B907A69B19499B9A00AAB5F8 /* FastAnimationWithPopSpec.mm */; };
+		B907A6E21949A52500AAB5F8 /* UIView+FastAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = B907A6E11949A52500AAB5F8 /* UIView+FastAnimation.m */; };
 		B93C899C194998000012FDB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93C899B194998000012FDB0 /* Foundation.framework */; };
 		B93C89A1194998000012FDB0 /* FastAnimationWithPop.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B93C89A0194998000012FDB0 /* FastAnimationWithPop.h */; };
 		B93C89A3194998000012FDB0 /* FastAnimationWithPop.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C89A2194998000012FDB0 /* FastAnimationWithPop.m */; };
@@ -49,6 +50,8 @@
 		6577A3926EAF40D1852ACD35 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DFC50BE41314E0098716D86 /* Pods-FastAnimationWithPopTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastAnimationWithPopTests.xcconfig"; path = "Pods/Pods-FastAnimationWithPopTests.xcconfig"; sourceTree = "<group>"; };
 		B907A69B19499B9A00AAB5F8 /* FastAnimationWithPopSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FastAnimationWithPopSpec.mm; sourceTree = "<group>"; };
+		B907A6E01949A52500AAB5F8 /* UIView+FastAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FastAnimation.h"; sourceTree = "<group>"; };
+		B907A6E11949A52500AAB5F8 /* UIView+FastAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FastAnimation.m"; sourceTree = "<group>"; };
 		B93C8998194998000012FDB0 /* libFastAnimationWithPop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFastAnimationWithPop.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B93C899B194998000012FDB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B93C899F194998000012FDB0 /* FastAnimationWithPop-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FastAnimationWithPop-Prefix.pch"; sourceTree = "<group>"; };
@@ -86,6 +89,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B907A6DE1949A50000AAB5F8 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		B907A6DF1949A50000AAB5F8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B907A6E01949A52500AAB5F8 /* UIView+FastAnimation.h */,
+				B907A6E11949A52500AAB5F8 /* UIView+FastAnimation.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		B93C898F194998000012FDB0 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +141,8 @@
 		B93C899D194998000012FDB0 /* FastAnimationWithPop */ = {
 			isa = PBXGroup;
 			children = (
+				B907A6DE1949A50000AAB5F8 /* Animations */,
+				B907A6DF1949A50000AAB5F8 /* Core */,
 				B93C89A0194998000012FDB0 /* FastAnimationWithPop.h */,
 				B93C89A2194998000012FDB0 /* FastAnimationWithPop.m */,
 				B93C899E194998000012FDB0 /* Supporting Files */,
@@ -304,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B93C89A3194998000012FDB0 /* FastAnimationWithPop.m in Sources */,
+				B907A6E21949A52500AAB5F8 /* UIView+FastAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
