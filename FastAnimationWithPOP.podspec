@@ -61,7 +61,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/WilliamZang/FastAnimationWithPOP.git", :commit => "6058fed7dfe29ec291def7f991cca052cbf0827b" }
+  s.source       = { :git => "https://github.com/WilliamZang/FastAnimationWithPOP.git", tag: 'v0.0.1' }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
