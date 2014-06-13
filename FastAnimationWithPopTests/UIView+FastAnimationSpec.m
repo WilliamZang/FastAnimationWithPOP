@@ -30,12 +30,15 @@ describe(@"UIView+FastAnimation", ^{
         NSString *type = @"SomeType@!@";
         targetView.animationType = type;
         expect(targetView.animationType).to.equal(type);
+        
         NSNumber *value1 = [NSNumber numberWithDouble:3.15];
-
         targetView.delay = value1.doubleValue;
-
         expect(@(targetView.delay)).to.equal(value1);
-
+        
+        NSString *paramValue = @"SomeValue";
+        [targetView setValue:paramValue forKeyPath:@"animationParams.someValue"];
+        expect([targetView valueForKeyPath:@"animationParams.someValue"]).to.equal(paramValue);
+        
     });  
     
     it(@"Normal awakeFromNib", ^{

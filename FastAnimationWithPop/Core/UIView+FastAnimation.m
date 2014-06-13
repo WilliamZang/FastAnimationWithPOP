@@ -6,8 +6,7 @@
 //  Copyright (c) 2014年 WilliamZang. All rights reserved.
 //
 
-#import "UIView+FastAnimation.h"
-#import "FastAnimationProtocol.h"
+#import "FastAnimationWithPop.h"
 #import <objc/runtime.h>
 
 #define DEFINE_RW_FLAG(ctype, flag, setter, asstype)            \
@@ -70,16 +69,22 @@ OBJC_ASSOCIATION_RETAIN_NONATOMIC);                                 \
     id value = objc_getAssociatedObject(self, flag##Key);           \
     return value ? [value doubleValue] : default;                   \
 }
+
+static void *animationParamsKey = &animationParamsKey;
 @implementation UIView (FastAnimation)
 
 DEFINE_RW_FLAG(NSString, animationType, setAnimationType, OBJC_ASSOCIATION_COPY_NONATOMIC)
-DEFINE_RW_CGFLOAT_FLAG_WITH_DEFAULT(springBounciness, setSpringBounciness, 4.0)
-DEFINE_RW_CGFLOAT_FLAG_WITH_DEFAULT(springSpeed, setSpringSpeed, 12)
-DEFINE_RW_CGFLOAT_FLAG(dynamicsTension, setDynamicsTension)
-DEFINE_RW_CGFLOAT_FLAG(dynamicsFriction, setDynamicsFriction)
-DEFINE_RW_CGFLOAT_FLAG(dynamicsMass, setDynamicsMass)
 DEFINE_RW_DOUBLE_FLAG(delay, setDelay)
 
+- (NSMutableDictionary *)animationParams
+{
+    NSMutableDictionary *dictionary = objc_getAssociatedObject(self, animationParamsKey);
+    if (dictionary == nil) {
+        dictionary = [NSMutableDictionary dictionary];
+        objc_setAssociatedObject(self, animationParamsKey, dictionary, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return dictionary;
+}
 
 - (void)swizzle_awakeFromNib
 {
@@ -90,11 +95,7 @@ DEFINE_RW_DOUBLE_FLAG(delay, setDelay)
             animationClass = NSClassFromString([@"FAAnimation" stringByAppendingString:self.animationType]);
         }
         NSAssert([animationClass conformsToProtocol:@protocol(FastAnimationProtocol)], @"The property 'animationType' must a class name and conforms protocol 'FastAnmationProtocol'");
-        NSAssert(self.delay > -0.0000001, @"property 'delay' must > 0");
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [animationClass performAnimation:self];
-        });
-
+        [animationClass performAnimation:self];
     }
 }
 

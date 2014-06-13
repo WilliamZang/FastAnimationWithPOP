@@ -6,8 +6,6 @@
 //  Copyright (c) 2014年 WilliamZang. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@interface FastAnimationWithPop : NSObject
-
-@end
+#import "UIView+FastAnimation.h"
+#import "FastAnimationProtocol.h"
+#import "FAAnimationBounces.h"
