@@ -1,2 +1,3 @@
 language: objective-c
-
+xcode_workspace: FastAnimationWithPop.xcworkspace
+xcode_scheme: FastAnimationWithPop
