@@ -55,6 +55,14 @@ IDENTIFICATION_KEY(flag)                                            \
 DEFINE_RW_CLASS_TYPE_PROP(NSString, flag, setter,                   \
     OBJC_ASSOCIATION_COPY_NONATOMIC)
 
+Class animationClassForString(NSString *animationType) {
+    Class animationClass = NSClassFromString(animationType);
+    if (animationClass == nil) {
+        animationClass = NSClassFromString([@"FAAnimation" stringByAppendingString:animationType]);
+    }
+    return animationClass;
+ 
+}
 
 @implementation NSObject(FastAnimation)
 
@@ -86,18 +94,11 @@ DEFINE_RW_BOOL_PROP(startAnimationWhenAwakeFromNib, setStartAnimationWhenAwakeFr
     }
     return dictionary;
 }
-- (Class)animationClass
-{
-    Class animationClass = NSClassFromString(self.animationType);
-    if (animationClass == nil) {
-        animationClass = NSClassFromString([@"FAAnimation" stringByAppendingString:self.animationType]);
-    }
-    return animationClass;
-}
+
 - (void)startFAAnimation
 {
     if (self.animationType) {
-        Class animationClass = [self animationClass];
+        Class animationClass = animationClassForString(self.animationType);
         NSAssert([animationClass conformsToProtocol:@protocol(FastAnimationProtocol)], @"The property 'animationType' must a class name and conforms protocol 'FastAnmationProtocol'");
         [animationClass performAnimation:self];
     }
@@ -105,7 +106,7 @@ DEFINE_RW_BOOL_PROP(startAnimationWhenAwakeFromNib, setStartAnimationWhenAwakeFr
 - (void)stopFAAnimation
 {
     if (self.animationType) {
-        Class animationClass = [self animationClass];
+        Class animationClass = animationClassForString(self.animationType);
         NSAssert([animationClass conformsToProtocol:@protocol(FastAnimationProtocol)], @"The property 'animationType' must a class name and conforms protocol 'FastAnmationProtocol'");
         [animationClass stopAnimation:self];
     }
