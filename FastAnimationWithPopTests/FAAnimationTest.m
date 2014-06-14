@@ -21,6 +21,11 @@ static BOOL g_animationHasPerform = NO;
     g_animationHasPerform = YES;
 }
 
++ (void)stopAnimation:(UIView *)view
+{
+
+}
+
 + (void)resetHasPerform
 {
     g_animationHasPerform = NO;

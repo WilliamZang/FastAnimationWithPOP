@@ -76,13 +76,8 @@ return value ? [value doubleValue] : default;                   \
 {
     [self swizzle_awakeFromNib];
     UIView *view = (UIView *)self;
-    if ([view isKindOfClass:UIView.class] && view.animationType) {
-        Class animationClass = NSClassFromString(view.animationType);
-        if (animationClass == nil) {
-            animationClass = NSClassFromString([@"FAAnimation" stringByAppendingString:view.animationType]);
-        }
-        NSAssert([animationClass conformsToProtocol:@protocol(FastAnimationProtocol)], @"The property 'animationType' must a class name and conforms protocol 'FastAnmationProtocol'");
-        [animationClass performAnimation:view];
+    if ([view isKindOfClass:UIView.class]) {
+        [view startFAAnimation];
     }
     
 }
@@ -104,8 +99,30 @@ DEFINE_RW_DOUBLE_FLAG(delay, setDelay)
     }
     return dictionary;
 }
-
-
+- (Class)animationClass
+{
+    Class animationClass = NSClassFromString(self.animationType);
+    if (animationClass == nil) {
+        animationClass = NSClassFromString([@"FAAnimation" stringByAppendingString:self.animationType]);
+    }
+    return animationClass;
+}
+- (void)startFAAnimation
+{
+    if (self.animationType) {
+        Class animationClass = [self animationClass];
+        NSAssert([animationClass conformsToProtocol:@protocol(FastAnimationProtocol)], @"The property 'animationType' must a class name and conforms protocol 'FastAnmationProtocol'");
+        [animationClass performAnimation:self];
+    }
+}
+- (void)stopFAAnimation
+{
+    if (self.animationType) {
+        Class animationClass = [self animationClass];
+        NSAssert([animationClass conformsToProtocol:@protocol(FastAnimationProtocol)], @"The property 'animationType' must a class name and conforms protocol 'FastAnmationProtocol'");
+        [animationClass stopAnimation:self];
+    }
+}
 
 + (void)load
 {

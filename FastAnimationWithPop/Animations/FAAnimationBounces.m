@@ -44,9 +44,11 @@ void setSpringAnimation(POPSpringAnimation *animation, UIView *view) {
     } else {
         [view.layer pop_addAnimation:animation forKey:@"BounceRight"];
     }
-    
-    
-    
+}
+
++ (void)stopAnimation:(UIView *)view
+{
+    [view.layer pop_animationForKey:@"BounceRight"];
 }
 @end
 
@@ -67,9 +69,12 @@ void setSpringAnimation(POPSpringAnimation *animation, UIView *view) {
     } else {
         [view.layer pop_addAnimation:animation forKey:@"BounceLeft"];
     }
-    
-    
-    
+}
+
+
++ (void)stopAnimation:(UIView *)view
+{
+    [view.layer pop_animationForKey:@"BounceLeft"];
 }
 @end
 
@@ -90,9 +95,12 @@ void setSpringAnimation(POPSpringAnimation *animation, UIView *view) {
     } else {
         [view.layer pop_addAnimation:animation forKey:@"BounceUp"];
     }
-    
-    
-    
+}
+
+
++ (void)stopAnimation:(UIView *)view
+{
+    [view.layer pop_animationForKey:@"BounceUp"];
 }
 @end
 
@@ -113,8 +121,11 @@ void setSpringAnimation(POPSpringAnimation *animation, UIView *view) {
     } else {
         [view.layer pop_addAnimation:animation forKey:@"BounceDown"];
     }
-    
-    
-    
+}
+
+
++ (void)stopAnimation:(UIView *)view
+{
+    [view.layer pop_animationForKey:@"BounceDown"];
 }
 @end

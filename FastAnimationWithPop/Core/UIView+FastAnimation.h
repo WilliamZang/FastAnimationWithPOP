@@ -14,4 +14,6 @@
 @property (nonatomic, assign) NSTimeInterval delay;
 @property (nonatomic, readonly) NSMutableDictionary *animationParams;
 
+- (void)startFAAnimation;
+- (void)stopFAAnimation;
 @end

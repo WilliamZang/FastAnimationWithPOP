@@ -11,4 +11,5 @@
 @protocol FastAnimationProtocol <NSObject>
 
 + (void)performAnimation:(UIView *)view;
++ (void)stopAnimation:(UIView *)view;
 @end
