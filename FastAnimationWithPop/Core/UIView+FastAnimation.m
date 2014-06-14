@@ -9,66 +9,52 @@
 #import "FastAnimationWithPop.h"
 #import <objc/runtime.h>
 
-#define DEFINE_RW_FLAG(ctype, flag, setter, asstype)            \
-static void *flag##Key = &flag##Key;                        \
-- (void)setter:(ctype *)value {                                 \
-objc_setAssociatedObject(self, flag##Key, value, asstype);  \
-}                                                               \
-- (ctype *)flag {                                               \
-return objc_getAssociatedObject(self, flag##Key);           \
-}
-
-#define DEFINE_RW_CGFLOAT_FLAG(flag, setter)                    \
-static void *flag##Key = &flag##Key;                        \
-- (void)setter: (CGFloat)value {                                \
-objc_setAssociatedObject(self, flag##Key,                   \
-[NSNumber numberWithFloat:value],                       \
-OBJC_ASSOCIATION_RETAIN_NONATOMIC);                     \
-}                                                               \
-- (CGFloat)flag                                                 \
-{                                                               \
-return [objc_getAssociatedObject(self, flag##Key)           \
-floatValue];                                            \
-}
-
-#define DEFINE_RW_CGFLOAT_FLAG_WITH_DEFAULT(flag, setter, default)  \
+#define DEFINE_RW_C_TYPE_WITH_DEFAULT(flag, setter, ctype, default) \
 static void *flag##Key = &flag##Key;                                \
-- (void)setter: (CGFloat)value {                                    \
-objc_setAssociatedObject(self, flag##Key,                           \
-[NSNumber numberWithFloat:value],                                   \
-OBJC_ASSOCIATION_RETAIN_NONATOMIC);                                 \
+- (void)setter:(ctype)value {                                       \
+    objc_setAssociatedObject(self, flag##Key, @(value),             \
+        OBJC_ASSOCIATION_RETAIN_NONATOMIC);                         \
 }                                                                   \
-- (CGFloat)flag                                                     \
-{                                                                   \
-id value = objc_getAssociatedObject(self, flag##Key);               \
-return value ? [value floatValue] : default;                        \
+- (ctype)flag {                                                     \
+
+#define IDENTIFICATION_KEY(flag)       static void *flag##Key = &flag##Key;
+
+#define SETTER(flag, setter, ctype)                                 \
+- (void)setter:(ctype)value {                                       \
+    objc_setAssociatedObject(self, flag##Key, @(value),             \
+    OBJC_ASSOCIATION_RETAIN_NONATOMIC);                             \
 }
 
-#define DEFINE_RW_DOUBLE_FLAG(flag, setter)                     \
-static void *flag##Key = &flag##Key;                            \
-- (void)setter: (double)value {                                 \
-objc_setAssociatedObject(self, flag##Key,                       \
-[NSNumber numberWithDouble:value],                              \
-OBJC_ASSOCIATION_RETAIN_NONATOMIC);                             \
-}                                                               \
-- (double)flag                                                  \
-{                                                               \
-return [objc_getAssociatedObject(self, flag##Key)               \
-doubleValue];                                                   \
+#define GETTER(flag, ctype, ctypeGetterMethod, defaultValue)        \
+- (ctype)flag {                                                     \
+    id value = objc_getAssociatedObject(self, flag##Key);           \
+    return value ? [value ctypeGetterMethod] : defaultValue;        \
 }
 
-#define DEFINE_RW_DOUBLE_FLAG_WITH_DEFAULT(flag, setter, default)   \
-static void *flag##Key = &flag##Key;                                \
-- (void)setter: (double)value {                                     \
-objc_setAssociatedObject(self, flag##Key,                           \
-[NSNumber numberWithDouble:value],                                  \
-OBJC_ASSOCIATION_RETAIN_NONATOMIC);                                 \
+#define DEFINE_RW_C_TYPE_PROP(flag, setter, ctype, ctypeGetterMethod, defaultValue) \
+IDENTIFICATION_KEY(flag)                                                            \
+SETTER(flag, setter, ctype)                                                         \
+GETTER(flag, ctype, ctypeGetterMethod, defaultValue)
+
+#define DEFINE_RW_BOOL_PROP(flag, setter, defaultValue)    \
+DEFINE_RW_C_TYPE_PROP(flag, setter, BOOL, boolValue, defaultValue)
+
+#define DEFINE_RW_DOUBLE_PROP(flag, setter, defaultValue)   \
+DEFINE_RW_C_TYPE_PROP(flag, setter, double, doubleValue, defaultValue)
+
+#define DEFINE_RW_CLASS_TYPE_PROP(classtype, flag, setter, asstype) \
+IDENTIFICATION_KEY(flag)                                            \
+- (void)setter:(classtype *)value {                                 \
+    objc_setAssociatedObject(self, flag##Key, value, asstype);      \
 }                                                                   \
-- (double)flag                                                      \
-{                                                                   \
-id value = objc_getAssociatedObject(self, flag##Key);           \
-return value ? [value doubleValue] : default;                   \
+- (classtype *)flag {                                               \
+    return objc_getAssociatedObject(self, flag##Key);               \
 }
+
+#define DEFINE_RW_STRING_PROP(flag, setter)                         \
+DEFINE_RW_CLASS_TYPE_PROP(NSString, flag, setter,                   \
+    OBJC_ASSOCIATION_COPY_NONATOMIC)
+
 
 @implementation NSObject(FastAnimation)
 
@@ -76,7 +62,7 @@ return value ? [value doubleValue] : default;                   \
 {
     [self swizzle_awakeFromNib];
     UIView *view = (UIView *)self;
-    if ([view isKindOfClass:UIView.class]) {
+    if ([view isKindOfClass:UIView.class] && view.startAnimationWhenAwakeFromNib) {
         [view startFAAnimation];
     }
     
@@ -87,8 +73,9 @@ return value ? [value doubleValue] : default;                   \
 static void *animationParamsKey = &animationParamsKey;
 @implementation UIView (FastAnimation)
 
-DEFINE_RW_FLAG(NSString, animationType, setAnimationType, OBJC_ASSOCIATION_COPY_NONATOMIC)
-DEFINE_RW_DOUBLE_FLAG(delay, setDelay)
+DEFINE_RW_STRING_PROP(animationType, setAnimationType)
+DEFINE_RW_DOUBLE_PROP(delay, setDelay, 0.0)
+DEFINE_RW_BOOL_PROP(startAnimationWhenAwakeFromNib, setStartAnimationWhenAwakeFromNib, YES)
 
 - (NSMutableDictionary *)animationParams
 {

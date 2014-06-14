@@ -38,7 +38,8 @@ describe(@"UIView+FastAnimation", ^{
         NSString *paramValue = @"SomeValue";
         [targetView setValue:paramValue forKeyPath:@"animationParams.someValue"];
         expect([targetView valueForKeyPath:@"animationParams.someValue"]).to.equal(paramValue);
-        
+        targetView.startAnimationWhenAwakeFromNib = NO;
+        expect(targetView.startAnimationWhenAwakeFromNib).to.beFalsy();
     });  
     
     it(@"Normal awakeFromNib", ^{
@@ -70,6 +71,20 @@ describe(@"UIView+FastAnimation", ^{
         targetView.animationType = @"Test";
 
         [targetView awakeFromNib];
+        expect([FAAnimationTest animationHasPerform]).will.beTruthy();
+    });
+    
+    it (@"startAnimationWhenAwakeFromNib prop", ^{
+        targetView.animationType = @"Test";
+        targetView.startAnimationWhenAwakeFromNib = NO;
+        [targetView awakeFromNib];
+        expect([FAAnimationTest animationHasPerform]).will.beFalsy();
+    });
+    
+    it(@"manual startAnimation", ^{
+        targetView.animationType = @"Test";
+        targetView.startAnimationWhenAwakeFromNib = NO;
+        [targetView startFAAnimation];
         expect([FAAnimationTest animationHasPerform]).will.beTruthy();
     });
     afterEach(^{

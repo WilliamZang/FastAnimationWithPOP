@@ -13,6 +13,11 @@
 @property (nonatomic, copy) NSString *animationType;
 @property (nonatomic, assign) NSTimeInterval delay;
 @property (nonatomic, readonly) NSMutableDictionary *animationParams;
+/**
+ *  The property 'startAnimationWhenAwakeFromNib' default value is YES.
+ *  The animation won't auto start if startAnimationWhenAwakeFromNib is NO.
+ */
+@property (nonatomic, assign) BOOL startAnimationWhenAwakeFromNib;
 
 - (void)startFAAnimation;
 - (void)stopFAAnimation;
