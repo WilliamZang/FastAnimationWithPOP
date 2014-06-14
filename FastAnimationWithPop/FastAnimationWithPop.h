@@ -11,3 +11,4 @@
 #import "FAAnimationBounces.h"
 #import "FAAnimationZoomOut.h"
 #import "FAAnimationShake.h"
+#import "FAAnimationGroup.h"
