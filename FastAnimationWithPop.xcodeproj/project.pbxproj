@@ -14,6 +14,7 @@
 		B907A6E51949ADAB00AAB5F8 /* UIView+FastAnimationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B907A6E41949ADAB00AAB5F8 /* UIView+FastAnimationSpec.m */; };
 		B907A6E81949B24F00AAB5F8 /* FAAnimationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B907A6E71949B24F00AAB5F8 /* FAAnimationTest.m */; };
 		B907A6EB1949B51400AAB5F8 /* FAAnimationBounces.m in Sources */ = {isa = PBXBuildFile; fileRef = B907A6EA1949B51400AAB5F8 /* FAAnimationBounces.m */; };
+		B92DE2AF194C579E00D2273A /* FAAnimationZoomOut.m in Sources */ = {isa = PBXBuildFile; fileRef = B92DE2AE194C579E00D2273A /* FAAnimationZoomOut.m */; };
 		B93C899C194998000012FDB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93C899B194998000012FDB0 /* Foundation.framework */; };
 		B93C89A1194998000012FDB0 /* FastAnimationWithPop.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B93C89A0194998000012FDB0 /* FastAnimationWithPop.h */; };
 		B93C89AA194998000012FDB0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93C89A9194998000012FDB0 /* XCTest.framework */; };
@@ -60,6 +61,8 @@
 		B907A6E71949B24F00AAB5F8 /* FAAnimationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAAnimationTest.m; sourceTree = "<group>"; };
 		B907A6E91949B51400AAB5F8 /* FAAnimationBounces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAAnimationBounces.h; sourceTree = "<group>"; };
 		B907A6EA1949B51400AAB5F8 /* FAAnimationBounces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAAnimationBounces.m; sourceTree = "<group>"; };
+		B92DE2AD194C579E00D2273A /* FAAnimationZoomOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAAnimationZoomOut.h; sourceTree = "<group>"; };
+		B92DE2AE194C579E00D2273A /* FAAnimationZoomOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAAnimationZoomOut.m; sourceTree = "<group>"; };
 		B93C8998194998000012FDB0 /* libFastAnimationWithPop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFastAnimationWithPop.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B93C899B194998000012FDB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B93C899F194998000012FDB0 /* FastAnimationWithPop-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FastAnimationWithPop-Prefix.pch"; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 		B907A6DE1949A50000AAB5F8 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				B92DE2AD194C579E00D2273A /* FAAnimationZoomOut.h */,
+				B92DE2AE194C579E00D2273A /* FAAnimationZoomOut.m */,
 				B907A6E91949B51400AAB5F8 /* FAAnimationBounces.h */,
 				B907A6EA1949B51400AAB5F8 /* FAAnimationBounces.m */,
 			);
@@ -337,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B907A6E21949A52500AAB5F8 /* UIView+FastAnimation.m in Sources */,
+				B92DE2AF194C579E00D2273A /* FAAnimationZoomOut.m in Sources */,
 				B907A6EB1949B51400AAB5F8 /* FAAnimationBounces.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
