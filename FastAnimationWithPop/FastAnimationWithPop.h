@@ -10,3 +10,4 @@
 #import "FastAnimationProtocol.h"
 #import "FAAnimationBounces.h"
 #import "FAAnimationZoomOut.h"
+#import "FAAnimationShake.h"
