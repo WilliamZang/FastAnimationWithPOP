@@ -7,6 +7,7 @@
 //
 
 #import "UIView+FastAnimation.h"
+#import "UIControl+FastAnimation.h"
 #import "FastAnimationProtocol.h"
 #import "FAAnimationBounces.h"
 #import "FAAnimationZoomOut.h"

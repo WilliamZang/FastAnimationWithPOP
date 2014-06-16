@@ -13,3 +13,19 @@
 + (void)performAnimation:(UIView *)view;
 + (void)stopAnimation:(UIView *)view;
 @end
+
+@protocol ControlFastAnimationProtocol <NSObject>
+
++ (void)bindingAnimation:(UIControl *)control;
+
++ (void)unbindingAnimatio:(UIColor *)control;
+
+@end
+
+@protocol FastAnimationReverseProtocol <NSObject>
+
++ (void)reverseAnimation:(UIView *)view;
+
++ (void)stopReverse:(UIView *)view;
+
+@end
