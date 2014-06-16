@@ -105,6 +105,16 @@ describe(@"UIView+FastAnimation", ^{
         [targetView reverseFAAnimation];
         expect([FAAnimationTestReverse reverseAnimationHasPerform]).will.beTruthy();
     });
+    
+    it (@"nested view test", ^{
+        UIView *animationView = [[UIView alloc] init];
+        animationView.animationType = @"Test";
+        UIView *subView = [[UIView alloc] init];
+        [subView addSubview:animationView];
+        [targetView addSubview:animationView];
+        [targetView startFAAnimationNested];
+        expect([FAAnimationTest animationHasPerform]).will.beTruthy();
+    });
     afterEach(^{
         targetView = nil;
     });

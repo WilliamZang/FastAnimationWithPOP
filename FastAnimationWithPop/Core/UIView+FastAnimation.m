@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 #import "FastAnimiationUitls.h"
 
-
+typedef void(^nestedBlock)(UIView *view);
 IDENTIFICATION_KEY(animationParams)
 
 @implementation UIView (FastAnimation)
@@ -62,6 +62,39 @@ DEFINE_RW_BOOL_PROP(startAnimationWhenAwakeFromNib, setStartAnimationWhenAwakeFr
         NSAssert([animationClass conformsToProtocol:@protocol(FastAnimationReverseProtocol)], @"If you want to stop a reverse animation, The property 'animationType' must a class name and conforms protocol 'FastAnmationProtocol'");
         [animationClass stopReverse:self];
     }
+}
+
+- (void)performBlockNested:(nestedBlock)block
+{
+    block(self);
+    [self.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        block(obj);
+    }];
+}
+
+- (void)startFAAnimationNested
+{
+    [self performBlockNested:^(UIView *view) {
+        [view startFAAnimation];
+    }];
+}
+- (void)stopFAAnimationNested
+{
+    [self performBlockNested:^(UIView *view) {
+        [view stopFAAnimation];
+    }];
+}
+- (void)reverseFAAnimationNested
+{
+    [self performBlockNested:^(UIView *view) {
+        [view reverseFAAnimation];
+    }];
+}
+- (void)stopReverseFAAnimationNested
+{
+    [self performBlockNested:^(UIView *view) {
+        [view stopReverseFAAnimation];
+    }];
 }
 
 

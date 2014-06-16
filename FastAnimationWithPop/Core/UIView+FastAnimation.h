@@ -24,4 +24,11 @@
 - (void)reverseFAAnimation;
 - (void)stopReverseFAAnimation;
 
+
+- (void)startFAAnimationNested;
+- (void)stopFAAnimationNested;
+- (void)reverseFAAnimationNested;
+- (void)stopReverseFAAnimationNested;
+
+
 @end
