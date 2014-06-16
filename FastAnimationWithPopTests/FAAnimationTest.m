@@ -9,6 +9,7 @@
 #import "FAAnimationTest.h"
 
 static BOOL g_animationHasPerform = NO;
+static BOOL g_reverseAnimationHasPerform = NO;
 @implementation FAAnimationTest
 
 + (BOOL)animationHasPerform
@@ -29,5 +30,24 @@ static BOOL g_animationHasPerform = NO;
 + (void)resetHasPerform
 {
     g_animationHasPerform = NO;
+    g_reverseAnimationHasPerform = NO;
+}
+@end
+
+@implementation FAAnimationTestReverse
+
++ (BOOL)reverseAnimationHasPerform
+{
+    return g_reverseAnimationHasPerform;
+}
+
++ (void)reverseAnimation:(UIView *)view
+{
+    g_reverseAnimationHasPerform = YES;
+}
+
++ (void)stopReverse:(UIView *)view
+{
+    
 }
 @end

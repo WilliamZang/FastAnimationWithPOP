@@ -55,7 +55,7 @@ describe(@"UIView+FastAnimation", ^{
         }
         @catch (NSException *exception){
             hasAssert = YES;
-            expect(exception.description).to.equal(@"The property 'animationType' must a class name and conforms protocol 'FastAnmationProtocol'");
+            expect(exception.description).to.equal(@"If you want to start an animation, the property 'animationType' must a class name and conforms protocol 'FastAnmationProtocol'");
         }
         expect(hasAssert).to.beTruthy();
     });
@@ -86,6 +86,24 @@ describe(@"UIView+FastAnimation", ^{
         targetView.startAnimationWhenAwakeFromNib = NO;
         [targetView startFAAnimation];
         expect([FAAnimationTest animationHasPerform]).will.beTruthy();
+    });
+    
+    it (@"wrong class name reverse.", ^{
+        targetView.animationType = @"Test";
+        BOOL hasAssert = NO;
+        @try {
+            [targetView reverseFAAnimation];
+        }
+        @catch (NSException *exception){
+            hasAssert = YES;
+            expect(exception.description).to.equal(@"If you want to perform a reverse animation, the property 'animationType' must a class name and conforms protocol 'FastAnmationProtocol'");
+        }
+        expect(hasAssert).to.beTruthy();
+    });
+    it (@"reverse", ^{
+        targetView.animationType = @"TestReverse";
+        [targetView reverseFAAnimation];
+        expect([FAAnimationTestReverse reverseAnimationHasPerform]).will.beTruthy();
     });
     afterEach(^{
         targetView = nil;

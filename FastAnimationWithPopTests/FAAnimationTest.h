@@ -13,3 +13,9 @@
 + (BOOL)animationHasPerform;
 + (void)resetHasPerform;
 @end
+
+@interface FAAnimationTestReverse : FAAnimationTest<FastAnimationReverseProtocol>
+
++ (BOOL)reverseAnimationHasPerform;
+
+@end

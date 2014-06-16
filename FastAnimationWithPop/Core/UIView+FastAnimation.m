@@ -33,7 +33,7 @@ DEFINE_RW_BOOL_PROP(startAnimationWhenAwakeFromNib, setStartAnimationWhenAwakeFr
 {
     if (self.animationType) {
         Class animationClass = animationClassForString(self.animationType);
-        NSAssert([animationClass conformsToProtocol:@protocol(FastAnimationProtocol)], @"The property 'animationType' must a class name and conforms protocol 'FastAnmationProtocol'");
+        NSAssert([animationClass conformsToProtocol:@protocol(FastAnimationProtocol)], @"If you want to start an animation, the property 'animationType' must a class name and conforms protocol 'FastAnmationProtocol'");
         [animationClass performAnimation:self];
     }
 }
@@ -41,8 +41,26 @@ DEFINE_RW_BOOL_PROP(startAnimationWhenAwakeFromNib, setStartAnimationWhenAwakeFr
 {
     if (self.animationType) {
         Class animationClass = animationClassForString(self.animationType);
-        NSAssert([animationClass conformsToProtocol:@protocol(FastAnimationProtocol)], @"The property 'animationType' must a class name and conforms protocol 'FastAnmationProtocol'");
+        NSAssert([animationClass conformsToProtocol:@protocol(FastAnimationProtocol)], @"If you want to stop an animation, the property 'animationType' must a class name and conforms protocol 'FastAnmationProtocol'");
         [animationClass stopAnimation:self];
+    }
+}
+
+- (void)reverseFAAnimation
+{
+    if (self.animationType) {
+        Class animationClass = animationClassForString(self.animationType);
+        NSAssert([animationClass conformsToProtocol:@protocol(FastAnimationReverseProtocol)], @"If you want to perform a reverse animation, the property 'animationType' must a class name and conforms protocol 'FastAnmationProtocol'");
+        [animationClass reverseAnimation:self];
+    }
+}
+
+- (void)stopReverseFAAnimation
+{
+    if (self.animationType) {
+        Class animationClass = animationClassForString(self.animationType);
+        NSAssert([animationClass conformsToProtocol:@protocol(FastAnimationReverseProtocol)], @"If you want to stop a reverse animation, The property 'animationType' must a class name and conforms protocol 'FastAnmationProtocol'");
+        [animationClass stopReverse:self];
     }
 }
 

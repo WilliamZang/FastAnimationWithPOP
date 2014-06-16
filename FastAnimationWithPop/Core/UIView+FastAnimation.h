@@ -21,4 +21,7 @@
 
 - (void)startFAAnimation;
 - (void)stopFAAnimation;
+- (void)reverseFAAnimation;
+- (void)stopReverseFAAnimation;
+
 @end
