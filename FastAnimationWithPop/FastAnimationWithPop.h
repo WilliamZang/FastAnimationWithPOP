@@ -10,6 +10,6 @@
 #import "UIControl+FastAnimation.h"
 #import "FastAnimationProtocol.h"
 #import "FAAnimationBounces.h"
-#import "FAAnimationZoomOut.h"
+#import "FAAnimationZoomIn.h"
 #import "FAAnimationShake.h"
 #import "FAAnimationGroup.h"

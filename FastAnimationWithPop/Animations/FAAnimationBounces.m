@@ -50,6 +50,21 @@ void setSpringAnimation(POPSpringAnimation *animation, UIView *view) {
 {
     [view.layer pop_animationForKey:@"BounceRight"];
 }
+
++ (void)reverseAnimation:(UIView *)view
+{
+    POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerTranslationX];
+    animation.toValue = @(-320);
+    
+    setSpringAnimation(animation, view);
+    
+    [view.layer pop_addAnimation:animation forKey:@"BounceRightReverse"];
+}
+
++ (void)stopReverse:(UIView *)view
+{
+    [view.layer pop_removeAnimationForKey:@"BounceRightReverse"];
+}
 @end
 
 @implementation FAAnimationBounceLeft
@@ -75,6 +90,21 @@ void setSpringAnimation(POPSpringAnimation *animation, UIView *view) {
 + (void)stopAnimation:(UIView *)view
 {
     [view.layer pop_animationForKey:@"BounceLeft"];
+}
+
++ (void)reverseAnimation:(UIView *)view
+{
+    POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerTranslationX];
+    animation.toValue = @(320);
+    
+    setSpringAnimation(animation, view);
+    
+    [view.layer pop_addAnimation:animation forKey:@"BounceLeftReverse"];
+}
+
++ (void)stopReverse:(UIView *)view
+{
+    [view.layer pop_removeAnimationForKey:@"BounceLeftReverse"];
 }
 @end
 
@@ -102,6 +132,22 @@ void setSpringAnimation(POPSpringAnimation *animation, UIView *view) {
 {
     [view.layer pop_animationForKey:@"BounceUp"];
 }
+
++ (void)reverseAnimation:(UIView *)view
+{
+    POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerTranslationY];
+    animation.toValue = @(568);
+    
+    setSpringAnimation(animation, view);
+    
+    [view.layer pop_addAnimation:animation forKey:@"BounceUpReverse"];
+}
+
++ (void)stopReverse:(UIView *)view
+{
+    [view.layer pop_removeAnimationForKey:@"BounceUpReverse"];
+}
+
 @end
 
 @implementation FAAnimationBounceDown
@@ -127,5 +173,20 @@ void setSpringAnimation(POPSpringAnimation *animation, UIView *view) {
 + (void)stopAnimation:(UIView *)view
 {
     [view.layer pop_animationForKey:@"BounceDown"];
+}
+
++ (void)reverseAnimation:(UIView *)view
+{
+    POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerTranslationY];
+    animation.toValue = @(-568);
+    
+    setSpringAnimation(animation, view);
+    
+    [view.layer pop_addAnimation:animation forKey:@"BounceDownReverse"];
+}
+
++ (void)stopReverse:(UIView *)view
+{
+    [view.layer pop_removeAnimationForKey:@"BounceDownReverse"];
 }
 @end

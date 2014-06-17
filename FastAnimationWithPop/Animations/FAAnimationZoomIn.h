@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "FastAnimationProtocol.h"
-@interface FAAnimationZoomOutX : NSObject<FastAnimationProtocol>
+@interface FAAnimationZoomInX : NSObject<FastAnimationProtocol, FastAnimationReverseProtocol>
 
 @end
 
-@interface FAAnimationZoomOutY : NSObject<FastAnimationProtocol>
+@interface FAAnimationZoomInY : NSObject<FastAnimationProtocol, FastAnimationReverseProtocol>
 
 @end

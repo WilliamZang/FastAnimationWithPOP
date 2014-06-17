@@ -16,18 +16,18 @@
 #define kDynamicsMass       (@"animationParams.dynamicsMass")
 
 
-@interface FAAnimationBounceRight : NSObject<FastAnimationProtocol>
+@interface FAAnimationBounceRight : NSObject<FastAnimationProtocol, FastAnimationReverseProtocol>
 
 @end
 
-@interface FAAnimationBounceLeft : NSObject<FastAnimationProtocol>
+@interface FAAnimationBounceLeft : NSObject<FastAnimationProtocol, FastAnimationReverseProtocol>
 
 @end
 
-@interface FAAnimationBounceUp : NSObject<FastAnimationProtocol>
+@interface FAAnimationBounceUp : NSObject<FastAnimationProtocol, FastAnimationReverseProtocol>
 
 @end
 
-@interface FAAnimationBounceDown : NSObject<FastAnimationProtocol>
+@interface FAAnimationBounceDown : NSObject<FastAnimationProtocol, FastAnimationReverseProtocol>
 
 @end
