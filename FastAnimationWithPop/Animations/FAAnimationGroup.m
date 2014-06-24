@@ -28,7 +28,17 @@ Class animationClassForString(NSString *animationType);
 
 + (void)stopAnimation:(UIView *)view
 {
-    
+    NSString *animations = [view valueForKeyPath:kIncludeAnimations];
+    NSAssert([animations isKindOfClass:NSString.class], @"animationParams.animations must exists and be a string");
+    NSArray *animationClasses = [animations componentsSeparatedByCharactersInSet: [NSCharacterSet characterSetWithCharactersInString:@", "]];
+    for (NSString *animationClassName in animationClasses) {
+        if ([animationClassName isEqualToString:@""]) {
+            continue;
+        }
+        Class animation = animationClassForString(animationClassName);
+        NSAssert(animation, @"%@ class not exists", animationClassName);
+        [animation stopAnimation:view];
+    }
 }
 
 @end
