@@ -22,6 +22,7 @@ Class animationClassForString(NSString *animationType);
         }
         Class animation = animationClassForString(animationClassName);
         NSAssert(animation, @"%@ class not exists", animationClassName);
+        NSAssert([animation conformsToProtocol:@protocol(FastAnimationProtocol)], @"%@ must conforms FastAnimationProtocol", animationClassName);
         [animation performAnimation:view];
     }
 }
@@ -37,6 +38,7 @@ Class animationClassForString(NSString *animationType);
         }
         Class animation = animationClassForString(animationClassName);
         NSAssert(animation, @"%@ class not exists", animationClassName);
+        NSAssert([animation conformsToProtocol:@protocol(FastAnimationProtocol)], @"%@ must conforms FastAnimationProtocol", animationClassName);
         [animation stopAnimation:view];
     }
 }
