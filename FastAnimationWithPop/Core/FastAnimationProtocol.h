@@ -18,7 +18,7 @@
 
 + (void)bindingAnimation:(UIControl *)control;
 
-+ (void)unbindingAnimatio:(UIColor *)control;
++ (void)unbindingAnimation:(UIControl *)control;
 
 @end
 

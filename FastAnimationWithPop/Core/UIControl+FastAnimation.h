@@ -10,5 +10,11 @@
 
 @interface UIControl (FastAnimation)
 
+@property (nonatomic, copy) NSString *bindingAnimationType;
+
+- (void)bindingFAAnimation;
+
+- (void)unbindingFAAnimation;
+
 
 @end

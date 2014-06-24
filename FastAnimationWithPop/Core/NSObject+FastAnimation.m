@@ -7,7 +7,7 @@
 //
 
 #import "NSObject+FastAnimation.h"
-#import "UIView+FastAnimation.h"
+#import "FastAnimationWithPop.h"
 #import <objc/runtime.h>
 
 @implementation NSObject (FastAnimation)
@@ -18,6 +18,11 @@
     UIView *view = (UIView *)self;
     if ([view isKindOfClass:UIView.class] && view.startAnimationWhenAwakeFromNib) {
         [view startFAAnimation];
+    }
+    
+    UIControl *control = (UIControl *)self;
+    if ([control isKindOfClass:UIControl.class]) {
+        [control bindingFAAnimation];
     }
     
 }
