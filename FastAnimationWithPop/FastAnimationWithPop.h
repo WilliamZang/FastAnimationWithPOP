@@ -13,3 +13,5 @@
 #import "FAAnimationZoomIn.h"
 #import "FAAnimationShake.h"
 #import "FAAnimationGroup.h"
+#import "FAAnimationZoomOut.h"
+#import "FAAnimationButtonScale.h"
