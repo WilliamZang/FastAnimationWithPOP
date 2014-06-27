@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "FastAnimationProtocol.h"
 
+#define kShakeVelocity      (@"animationParams.velocity")
+
 @interface FAAnimationShake : NSObject<FastAnimationProtocol>
 
 @end

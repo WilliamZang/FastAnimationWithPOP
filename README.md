@@ -91,6 +91,8 @@ UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
 view.backgroundColor = [UIColor redColor];
 view.animationType = @"Shake";
 view.animationParams[@"velocity"] = @-7000;
+// You can also set params like this
+// [view setValue:@-7000 forKeyPath:kShakeVelocity];
 [view startFAAnimation];
 ```
 

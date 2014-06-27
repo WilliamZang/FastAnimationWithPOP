@@ -12,7 +12,7 @@
 + (void)performAnimation:(UIView *)view
 {
     POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
-    animation.velocity = view.animationParams[@"velocity"] ? view.animationParams[@"velocity"] : @2000;
+    animation.velocity = [view valueForKeyPath:kShakeVelocity] ? [view valueForKeyPath:kShakeVelocity] : @2000;
     animation.springBounciness = 20;
     if (view.delay > 0) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(view.delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
