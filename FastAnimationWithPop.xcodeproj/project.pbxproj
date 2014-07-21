@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0FBF9FDBD4421BB5F9DE77 /* libPods-FastAnimationWithPop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D4854E42FE4A70A58FEA07 /* libPods-FastAnimationWithPop.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		8218950AB61C408B9B2C4E5D /* libPods-FastAnimationWithPopTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CE98684FED499A90B71F4F /* libPods-FastAnimationWithPopTests.a */; };
-		B3ABE5A86C7B4D3AA340B376 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6577A3926EAF40D1852ACD35 /* libPods.a */; };
 		B907A69C19499B9A00AAB5F8 /* FastAnimationWithPopSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = B907A69B19499B9A00AAB5F8 /* FastAnimationWithPopSpec.mm */; };
 		B907A6E21949A52500AAB5F8 /* UIView+FastAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = B907A6E11949A52500AAB5F8 /* UIView+FastAnimation.m */; };
 		B907A6E51949ADAB00AAB5F8 /* UIView+FastAnimationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B907A6E41949ADAB00AAB5F8 /* UIView+FastAnimationSpec.m */; };
@@ -56,9 +56,9 @@
 
 /* Begin PBXFileReference section */
 		05CE98684FED499A90B71F4F /* libPods-FastAnimationWithPopTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FastAnimationWithPopTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0CF86E5A4E29497E8A1B9D39 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		6577A3926EAF40D1852ACD35 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		57D4854E42FE4A70A58FEA07 /* libPods-FastAnimationWithPop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FastAnimationWithPop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DFC50BE41314E0098716D86 /* Pods-FastAnimationWithPopTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastAnimationWithPopTests.xcconfig"; path = "Pods/Pods-FastAnimationWithPopTests.xcconfig"; sourceTree = "<group>"; };
+		B4EE89021E8F4DB0BE261DE8 /* Pods-FastAnimationWithPop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastAnimationWithPop.xcconfig"; path = "Pods/Pods-FastAnimationWithPop.xcconfig"; sourceTree = "<group>"; };
 		B907A69B19499B9A00AAB5F8 /* FastAnimationWithPopSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FastAnimationWithPopSpec.mm; sourceTree = "<group>"; };
 		B907A6E01949A52500AAB5F8 /* UIView+FastAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FastAnimation.h"; sourceTree = "<group>"; };
 		B907A6E11949A52500AAB5F8 /* UIView+FastAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FastAnimation.m"; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B93C899C194998000012FDB0 /* Foundation.framework in Frameworks */,
-				B3ABE5A86C7B4D3AA340B376 /* libPods.a in Frameworks */,
+				2E0FBF9FDBD4421BB5F9DE77 /* libPods-FastAnimationWithPop.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,8 +160,8 @@
 				B93C89B1194998000012FDB0 /* FastAnimationWithPopTests */,
 				B93C899A194998000012FDB0 /* Frameworks */,
 				B93C8999194998000012FDB0 /* Products */,
-				0CF86E5A4E29497E8A1B9D39 /* Pods.xcconfig */,
 				8DFC50BE41314E0098716D86 /* Pods-FastAnimationWithPopTests.xcconfig */,
+				B4EE89021E8F4DB0BE261DE8 /* Pods-FastAnimationWithPop.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,8 +180,8 @@
 				B93C899B194998000012FDB0 /* Foundation.framework */,
 				B93C89A9194998000012FDB0 /* XCTest.framework */,
 				B93C89AC194998000012FDB0 /* UIKit.framework */,
-				6577A3926EAF40D1852ACD35 /* libPods.a */,
 				05CE98684FED499A90B71F4F /* libPods-FastAnimationWithPopTests.a */,
+				57D4854E42FE4A70A58FEA07 /* libPods-FastAnimationWithPop.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -374,7 +374,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-FastAnimationWithPop-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -499,7 +499,7 @@
 		};
 		B93C89BC194998000012FDB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CF86E5A4E29497E8A1B9D39 /* Pods.xcconfig */;
+			baseConfigurationReference = B4EE89021E8F4DB0BE261DE8 /* Pods-FastAnimationWithPop.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/FastAnimationWithPop.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -512,7 +512,7 @@
 		};
 		B93C89BD194998000012FDB0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CF86E5A4E29497E8A1B9D39 /* Pods.xcconfig */;
+			baseConfigurationReference = B4EE89021E8F4DB0BE261DE8 /* Pods-FastAnimationWithPop.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/FastAnimationWithPop.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
