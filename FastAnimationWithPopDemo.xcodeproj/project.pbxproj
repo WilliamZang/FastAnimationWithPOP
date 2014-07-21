@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2416C2883E214C72AFF41F83 /* libPods-FastAnimationWithPopDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F654D70AACB4A8182E26AB6 /* libPods-FastAnimationWithPopDemo.a */; };
 		B907A6AA1949A1F900AAB5F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B907A6A91949A1F900AAB5F8 /* Foundation.framework */; };
 		B907A6AC1949A1F900AAB5F8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B907A6AB1949A1F900AAB5F8 /* CoreGraphics.framework */; };
 		B907A6AE1949A1F900AAB5F8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B907A6AD1949A1F900AAB5F8 /* UIKit.framework */; };
@@ -16,12 +17,11 @@
 		B907A6BD1949A1F900AAB5F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B907A6BB1949A1F900AAB5F8 /* Main.storyboard */; };
 		B907A6C01949A1F900AAB5F8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B907A6BF1949A1F900AAB5F8 /* ViewController.m */; };
 		B907A6C21949A1F900AAB5F8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B907A6C11949A1F900AAB5F8 /* Images.xcassets */; };
-		B907A6C91949A1F900AAB5F8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B907A6C81949A1F900AAB5F8 /* XCTest.framework */; };
+		B907A6C91949A1F900AAB5F8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B907A6C81949A1F900AAB5F8 /* XCTest.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B907A6CA1949A1F900AAB5F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B907A6A91949A1F900AAB5F8 /* Foundation.framework */; };
-		B907A6CB1949A1F900AAB5F8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B907A6AD1949A1F900AAB5F8 /* UIKit.framework */; };
+		B907A6CB1949A1F900AAB5F8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B907A6AD1949A1F900AAB5F8 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B907A6D31949A1F900AAB5F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B907A6D11949A1F900AAB5F8 /* InfoPlist.strings */; };
 		B907A6D51949A1F900AAB5F8 /* FastAnimationWithPopDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B907A6D41949A1F900AAB5F8 /* FastAnimationWithPopDemoTests.m */; };
-		B90A8B63197CEC13005570A6 /* libFastAnimationWithPop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B90A8B62197CEC13005570A6 /* libFastAnimationWithPop.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F654D70AACB4A8182E26AB6 /* libPods-FastAnimationWithPopDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FastAnimationWithPopDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B907A6A61949A1F900AAB5F8 /* FastAnimationWithPopDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastAnimationWithPopDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B907A6A91949A1F900AAB5F8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B907A6AB1949A1F900AAB5F8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,10 +64,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B90A8B63197CEC13005570A6 /* libFastAnimationWithPop.a in Frameworks */,
 				B907A6AC1949A1F900AAB5F8 /* CoreGraphics.framework in Frameworks */,
 				B907A6AE1949A1F900AAB5F8 /* UIKit.framework in Frameworks */,
 				B907A6AA1949A1F900AAB5F8 /* Foundation.framework in Frameworks */,
+				2416C2883E214C72AFF41F83 /* libPods-FastAnimationWithPopDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +112,7 @@
 				B907A6AB1949A1F900AAB5F8 /* CoreGraphics.framework */,
 				B907A6AD1949A1F900AAB5F8 /* UIKit.framework */,
 				B907A6C81949A1F900AAB5F8 /* XCTest.framework */,
+				0F654D70AACB4A8182E26AB6 /* libPods-FastAnimationWithPopDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

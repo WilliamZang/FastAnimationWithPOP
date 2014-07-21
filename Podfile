@@ -11,3 +11,9 @@ target 'FastAnimationWithPopTests', exclusive: true do
   pod 'Expecta', '~> 0.3.0'
   pod 'Specta', '~> 0.2.1'
 end
+
+target 'FastAnimationWithPopDemo' do
+  xcodeproj 'FastAnimationWithPopDemo.xcodeproj'
+  pod 'FastAnimationWithPOP', path: './'
+end
+
