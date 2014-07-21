@@ -3,4 +3,5 @@ xcode_workspace: FastAnimationWithPop.xcworkspace
 xcode_scheme: 
   - FastAnimationWithPop
   - FastAnimationWithPopDemo
-xcode_sdk: iphonesimulator7.1
+xcode_sdk: iphonesimulator7.0
+
