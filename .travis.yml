@@ -1,8 +1,6 @@
 language: objective-c
-before_install:
-  - gem install cocoapods -v  0.33.1
-  - brew update
-  - brew upgrade xctool
 xcode_workspace: FastAnimationWithPop.xcworkspace
-xcode_scheme: FastAnimationWithPop
+xcode_scheme: 
+  - FastAnimationWithPop
+  - FastAnimationWithPopDemo
 xcode_sdk: iphonesimulator

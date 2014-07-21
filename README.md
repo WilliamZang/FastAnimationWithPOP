@@ -4,8 +4,6 @@ FastAnimation
 
 A very simplifty animation framework. Powerby [Facebook POP](https://github.com/facebook/pop). Use **fast animation** you can add animations without any lines of code.
 
-You can see the DEMO in project [DEMO](https://github.com/WilliamZang/FastAnimationWithPopDemo).
-
 **If you like this, please star me!**
 
 ![Demo](https://raw.githubusercontent.com/WilliamZang/FastAnimationWithPOP/master/Docs/demo.gif)
@@ -200,8 +198,6 @@ If this is something you think you can fix, then
 [fork FastAnimationWithPOP](https://help.github.com/articles/fork-a-repo)
 and create a branch with a descriptive name.
 
-If you want to give some beautiful DEMO, then fork [FastAnimationWithPopDemo](https://github.com/WilliamZang/FastAnimationWithPopDemo).
-
 A good branch name would be (where issue #325 is the ticket you're working on):
 
 ```sh
@@ -215,7 +211,7 @@ everyone is a beginner at first :smile_cat:
 
 ### 4. Sync implement the DEMO
 
-If you add a new animation. You'd better to add effect to [FastAnimationWithPopDemo](https://github.com/WilliamZang/FastAnimationWithPopDemo) project.
+If you add a new animation. You'd better to add effect to demo project.
 
 ### 5. Unit test
 
