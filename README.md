@@ -174,7 +174,7 @@ You can use following methods in UIView instance to make a nested animation. All
 * Group animation
 * Zoom out animation
 * Button scale animation
-* **More animations are waiting for your contributing...**
+* **More animations are waiting for your contribution...**
 
 ## TODO
 
