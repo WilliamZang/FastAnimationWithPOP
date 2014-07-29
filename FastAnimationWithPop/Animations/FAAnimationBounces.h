@@ -7,27 +7,31 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FastAnimationProtocol.h"
 
-#define kSpringBounciness   (@"animationParams.springBounciness")
-#define kSpringSpeed        (@"animationParams.springSpeed")
-#define kDynamicsTension    (@"animationParams.dynamicsTension")
-#define kDynamicsFriction   (@"animationParams.dynamicsFriction")
-#define kDynamicsMass       (@"animationParams.dynamicsMass")
+@interface FAAnimationBounceBase : FAAnimationBase
 
-
-@interface FAAnimationBounceRight : NSObject<FastAnimationProtocol, FastAnimationReverseProtocol>
+@property (nonatomic, strong) IBInspectable NSNumber *springBounciness;
+@property (nonatomic, strong) IBInspectable NSNumber *springSpeed;
+@property (nonatomic, strong) IBInspectable NSNumber *dynamicsTension;
+@property (nonatomic, strong) IBInspectable NSNumber *dynamicsFriction;
+@property (nonatomic, strong) IBInspectable NSNumber *dynamicsMass;
 
 @end
 
-@interface FAAnimationBounceLeft : NSObject<FastAnimationProtocol, FastAnimationReverseProtocol>
+
+
+@interface FAAnimationBounceRight : FAAnimationBounceBase
 
 @end
 
-@interface FAAnimationBounceUp : NSObject<FastAnimationProtocol, FastAnimationReverseProtocol>
+@interface FAAnimationBounceLeft : FAAnimationBounceBase
 
 @end
 
-@interface FAAnimationBounceDown : NSObject<FastAnimationProtocol, FastAnimationReverseProtocol>
+@interface FAAnimationBounceUp : FAAnimationBounceBase
+
+@end
+
+@interface FAAnimationBounceDown : FAAnimationBounceBase
 
 @end
