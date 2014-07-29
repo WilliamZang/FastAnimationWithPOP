@@ -104,6 +104,7 @@ DEFINE_RW_BOOL_PROP(startAnimationWhenAwakeFromNib, setStartAnimationWhenAwakeFr
 {
     NSMutableSet *animations = [self internalMutableAnimations];
     [animations addObject:animation];
+    [animation configView:self];
 }
 
 - (void)removeAnimation:(FAAnimationBase *)animation

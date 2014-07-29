@@ -16,6 +16,8 @@
 
 @property (nonatomic, assign) IBInspectable CGFloat performAwakeAnimationDelay;
 
+- (void)configView:(UIView *)view;
+
 - (void)startAnimation;
 
 - (void)stopAnimation;

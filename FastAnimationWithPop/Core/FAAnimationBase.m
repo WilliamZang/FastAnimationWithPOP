@@ -22,7 +22,6 @@
 {
     if (_bindingView != bindingView) {
         [self releaseLifetimeFromObject:_bindingView];
-        _bindingView = bindingView;
         [self bindLifetimeToObject:bindingView];
     }
 }
@@ -45,5 +44,10 @@
 - (void)stopAnimation
 {
     NSAssert(NO, @"You must use FAAnimationBase's subclass, and implement -(void)stopAnimation method");
+}
+
+- (void)configView:(UIView *)view
+{
+    _bindingView = view;
 }
 @end
