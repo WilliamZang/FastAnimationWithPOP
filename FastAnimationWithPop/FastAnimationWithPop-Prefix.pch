@@ -9,3 +9,7 @@
     #import <UIKit/UIKit.h>
     #import <POP.h>
 #endif
+
+#ifndef IBInspectable
+#define IBInspectable
+#endif

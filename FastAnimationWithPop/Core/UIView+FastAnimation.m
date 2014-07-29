@@ -13,6 +13,9 @@
 typedef void(^nestedBlock)(UIView *view);
 IDENTIFICATION_KEY(animationParams)
 
+static void *InternalAnimationsKey = &InternalAnimationsKey;
+
+
 @implementation UIView (FastAnimation)
 
 DEFINE_RW_STRING_PROP(animationType, setAnimationType)
@@ -97,5 +100,31 @@ DEFINE_RW_BOOL_PROP(startAnimationWhenAwakeFromNib, setStartAnimationWhenAwakeFr
     }];
 }
 
+- (void)addAnimation:(FAAnimationBase *)animation
+{
+    NSMutableSet *animations = [self internalMutableAnimations];
+    [animations addObject:animation];
+}
+
+- (void)removeAnimation:(FAAnimationBase *)animation
+{
+    NSMutableSet *animations = [self internalMutableAnimations];
+    [animations removeObject:animation];
+}
+
+- (NSSet *)internalAnimations
+{
+    NSMutableSet *animations = objc_getAssociatedObject(self, InternalAnimationsKey);
+    if (animations == nil) {
+        animations = [NSMutableSet set];
+        objc_setAssociatedObject(self, InternalAnimationsKey, animations, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return animations;
+}
+
+- (NSMutableSet *)internalMutableAnimations
+{
+    return (NSMutableSet *)[self internalAnimations];
+}
 
 @end

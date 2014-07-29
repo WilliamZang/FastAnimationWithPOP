@@ -27,6 +27,7 @@
 		B93C89B6194998000012FDB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B93C89B4194998000012FDB0 /* InfoPlist.strings */; };
 		B97D2C58195C1BDA00B4A40C /* FAAnimationZoomOut.m in Sources */ = {isa = PBXBuildFile; fileRef = B97D2C57195C1BDA00B4A40C /* FAAnimationZoomOut.m */; };
 		B97D2C5C195C1EB300B4A40C /* FAAnimationButtonScale.m in Sources */ = {isa = PBXBuildFile; fileRef = B97D2C5B195C1EB300B4A40C /* FAAnimationButtonScale.m */; };
+		B989B5721986522800F9A426 /* FAAnimationBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B989B5711986522800F9A426 /* FAAnimationBase.m */; };
 		B9BA9014194E8A7800BC8743 /* NSObject+FastAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BA9013194E8A7800BC8743 /* NSObject+FastAnimation.m */; };
 		B9BA9017194E918D00BC8743 /* FastAnimiationUitls.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BA9016194E918D00BC8743 /* FastAnimiationUitls.m */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,8 @@
 		B97D2C57195C1BDA00B4A40C /* FAAnimationZoomOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAAnimationZoomOut.m; sourceTree = "<group>"; };
 		B97D2C5A195C1EB300B4A40C /* FAAnimationButtonScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAAnimationButtonScale.h; sourceTree = "<group>"; };
 		B97D2C5B195C1EB300B4A40C /* FAAnimationButtonScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAAnimationButtonScale.m; sourceTree = "<group>"; };
+		B989B5701986522800F9A426 /* FAAnimationBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAAnimationBase.h; sourceTree = "<group>"; };
+		B989B5711986522800F9A426 /* FAAnimationBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAAnimationBase.m; sourceTree = "<group>"; };
 		B9BA9012194E8A7800BC8743 /* NSObject+FastAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FastAnimation.h"; sourceTree = "<group>"; };
 		B9BA9013194E8A7800BC8743 /* NSObject+FastAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FastAnimation.m"; sourceTree = "<group>"; };
 		B9BA9015194E918D00BC8743 /* FastAnimiationUitls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastAnimiationUitls.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				B9BA9013194E8A7800BC8743 /* NSObject+FastAnimation.m */,
 				B9BA9015194E918D00BC8743 /* FastAnimiationUitls.h */,
 				B9BA9016194E918D00BC8743 /* FastAnimiationUitls.m */,
+				B989B5701986522800F9A426 /* FAAnimationBase.h */,
+				B989B5711986522800F9A426 /* FAAnimationBase.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 				B9BA9017194E918D00BC8743 /* FastAnimiationUitls.m in Sources */,
 				B97D2C58195C1BDA00B4A40C /* FAAnimationZoomOut.m in Sources */,
 				B92DE2B2194C58E400D2273A /* FAAnimationShake.m in Sources */,
+				B989B5721986522800F9A426 /* FAAnimationBase.m in Sources */,
 				B907A6E21949A52500AAB5F8 /* UIView+FastAnimation.m in Sources */,
 				B9BA9014194E8A7800BC8743 /* NSObject+FastAnimation.m in Sources */,
 				B92DE2B5194C5C5F00D2273A /* FAAnimationGroup.m in Sources */,

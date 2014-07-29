@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class FAAnimationBase;
 @interface UIView (FastAnimation)
 
 @property (nonatomic, copy) NSString *animationType;
@@ -30,5 +31,7 @@
 - (void)reverseFAAnimationNested;
 - (void)stopReverseFAAnimationNested;
 
+- (void)addAnimation:(FAAnimationBase *)animation;
+- (void)removeAnimation:(FAAnimationBase *)animation;
 
 @end
