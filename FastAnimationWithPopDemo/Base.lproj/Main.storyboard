@@ -33,12 +33,6 @@
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="BounceDown"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                        <integer key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </segmentedControl>
                             <view contentMode="scaleToFill" id="ajK-mi-jQa">
                                 <rect key="frame" x="37" y="71" width="179" height="53"/>
@@ -58,9 +52,6 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="animationParams.velocity">
                                         <integer key="value" value="-7000"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                        <real key="value" value="0.5"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" id="vMN-tc-vvc">
@@ -76,13 +67,6 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.65882354974746704" blue="0.89803928136825562" alpha="1" colorSpace="deviceRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Group"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationParams.animations" value="BounceRight"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                        <real key="value" value="1.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ynm-X8-z0Z">
                                 <rect key="frame" x="37" y="381" width="263" height="178"/>
@@ -105,12 +89,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0039215688589999999" green="0.82352948189999997" blue="0.66666668650000005" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="BounceRight"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -118,6 +96,36 @@
                     <navigationItem key="navigationItem" title="Normal DEMO" id="qu0-qi-xvo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <customObject id="D2i-g6-HGC" customClass="FAAnimationBounceRight">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="performAwakeAnimationDelay">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="bindingView" destination="Q3v-Nt-rKB" id="rjQ-EK-UJ9"/>
+                    </connections>
+                </customObject>
+                <customObject id="wxa-eI-gyK" customClass="FAAnimationBounceDown">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="performAwakeAnimationDelay">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="bindingView" destination="ie3-Bc-rdF" id="zKA-NP-vSp"/>
+                    </connections>
+                </customObject>
+                <customObject id="Ojq-jg-DTz" customClass="FAAnimationBounceRight">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="performAwakeAnimationDelay">
+                            <real key="value" value="1.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="bindingView" destination="vMN-tc-vvc" id="dvc-eu-6ET"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1682" y="-443"/>
         </scene>
