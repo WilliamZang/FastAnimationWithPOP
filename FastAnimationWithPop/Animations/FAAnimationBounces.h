@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FAAnimationBase.h"
+#import "FastAnimationProtocol.h"
 
-@interface FAAnimationBounceBase : FAAnimationBase
+@interface FAAnimationBounceBase : FAAnimationBase <FastAnimationProtocol, FastAnimationReverseProtocol>
 
 @property (nonatomic, strong) IBInspectable NSNumber *springBounciness;
 @property (nonatomic, strong) IBInspectable NSNumber *springSpeed;

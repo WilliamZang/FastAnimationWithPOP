@@ -18,8 +18,4 @@
 
 - (void)configView:(UIView *)view;
 
-- (void)startAnimation;
-
-- (void)stopAnimation;
-
 @end

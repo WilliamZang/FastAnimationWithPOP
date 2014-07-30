@@ -63,3 +63,5 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
+
+#define SELF_IDENTIFICATION         ([@((NSInteger)self) stringValue])

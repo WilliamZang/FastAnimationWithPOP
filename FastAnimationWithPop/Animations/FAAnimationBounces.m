@@ -10,6 +10,7 @@
 
 @interface FAAnimationBounceBase()
 @property (nonatomic, strong) POPSpringAnimation *internalAnimation;
+@property (nonatomic, strong) POPSpringAnimation *internalReverseAnimation;
 
 - (NSString *)animationPropertyNamed;
 - (void)preConfig;
@@ -21,6 +22,7 @@
 {
     [super configView:view];
     self.internalAnimation = [POPSpringAnimation animationWithPropertyNamed:[self animationPropertyNamed]];
+    self.internalReverseAnimation = [POPSpringAnimation animationWithPropertyNamed:[self animationPropertyNamed]];
     [self preConfig];
 }
 
@@ -34,31 +36,45 @@
 {
     if (self.springBounciness) {
         self.internalAnimation.springBounciness = self.springBounciness.floatValue;
+        self.internalReverseAnimation.springBounciness = self.springBounciness.floatValue;
 	}
     if (self.springSpeed) {
         self.internalAnimation.springSpeed = self.springSpeed.floatValue;
+        self.internalReverseAnimation.springSpeed = self.springSpeed.floatValue;
 	}
     if (self.dynamicsTension) {
         self.internalAnimation.dynamicsTension = self.dynamicsTension.floatValue;
+        self.internalReverseAnimation.dynamicsTension = self.dynamicsTension.floatValue;
 	}
     if (self.dynamicsFriction) {
         self.internalAnimation.dynamicsFriction = self.dynamicsFriction.floatValue;
+        self.internalReverseAnimation.dynamicsFriction = self.dynamicsFriction.floatValue;
 	}
     if (self.dynamicsMass) {
         self.internalAnimation.dynamicsMass = self.dynamicsMass.floatValue;
+        self.internalReverseAnimation.dynamicsMass = self.dynamicsMass.floatValue;
 	}
 }
 
 - (void)startAnimation
 {
-    [self.bindingView.layer pop_addAnimation:self.internalAnimation forKey:[@((NSInteger)self) stringValue]];
+    [self.bindingView.layer pop_addAnimation:self.internalAnimation forKey:SELF_IDENTIFICATION];
 }
 
 - (void)stopAnimation
 {
-    [self.bindingView.layer pop_removeAnimationForKey:[@((NSInteger)self) stringValue]];
+    [self.bindingView.layer pop_removeAnimationForKey:SELF_IDENTIFICATION];
 }
 
+- (void)reverseAnimation
+{
+    [self.bindingView.layer pop_addAnimation:self.internalReverseAnimation forKey:[NSString stringWithFormat:@"-%@", SELF_IDENTIFICATION]];
+}
+
+- (void)stopReverse
+{
+    [self.bindingView.layer pop_removeAnimationForKey:[NSString stringWithFormat:@"-%@", SELF_IDENTIFICATION]];
+}
 @end
 
 @implementation FAAnimationBounceRight
@@ -73,6 +89,7 @@
     [super preConfig];
     self.bindingView.layer.transform = CATransform3DMakeTranslation(-320, 0, 0);
     self.internalAnimation.toValue = @(0);
+    self.internalReverseAnimation.toValue = @(-320);
 }
 @end
 
@@ -88,6 +105,7 @@
     [super preConfig];
     self.bindingView.layer.transform = CATransform3DMakeTranslation(320, 0, 0);
     self.internalAnimation.toValue = @(0);
+    self.internalReverseAnimation.toValue = @(320);
 }
 
 @end
@@ -104,6 +122,7 @@
     [super preConfig];
     self.bindingView.layer.transform = CATransform3DMakeTranslation(0, 568, 0);
     self.internalAnimation.toValue = @(0);
+    self.internalReverseAnimation.toValue = @(568);
 }
 
 @end
@@ -120,5 +139,6 @@
     [super preConfig];
     self.bindingView.layer.transform = CATransform3DMakeTranslation(0, -568, 0);
     self.internalAnimation.toValue = @(0);
+    self.internalReverseAnimation.toValue = @(-568);
 }
 @end

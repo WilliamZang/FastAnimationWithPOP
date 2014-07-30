@@ -13,7 +13,7 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    if (!self.stopPerformWhenAwake) {
+    if (!self.stopPerformWhenAwake && [self.class conformsToProtocol:@protocol(FastAnimationProtocol)]) {
         [self performSelector:@selector(startAnimation) withObject:nil afterDelay:self.performAwakeAnimationDelay];
     }
 }
@@ -34,16 +34,6 @@
 - (void)releaseLifetimeFromObject:(UIView *)view
 {
     [view removeAnimation:self];
-}
-
-- (void)startAnimation
-{
-    NSAssert(NO, @"You must use FAAnimationBase's subclass, and implement -(void)startAnimation method");
-}
-
-- (void)stopAnimation
-{
-    NSAssert(NO, @"You must use FAAnimationBase's subclass, and implement -(void)stopAnimation method");
 }
 
 - (void)configView:(UIView *)view

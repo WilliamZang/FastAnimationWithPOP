@@ -6,6 +6,7 @@
 //  Copyright (c) 2014年 WilliamZang. All rights reserved.
 //
 
+#import "FastAnimiationUitls.h"
 #import "UIView+FastAnimation.h"
 #import "FAAnimationBase.h"
 #import "UIControl+FastAnimation.h"

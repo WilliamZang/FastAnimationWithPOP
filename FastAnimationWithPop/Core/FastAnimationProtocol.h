@@ -10,8 +10,12 @@
 
 @protocol FastAnimationProtocol <NSObject>
 
+@optional
 + (void)performAnimation:(UIView *)view;
 + (void)stopAnimation:(UIView *)view;
+
+- (void)startAnimation;
+- (void)stopAnimation;
 @end
 
 @protocol ControlFastAnimationProtocol <NSObject>
@@ -24,8 +28,11 @@
 
 @protocol FastAnimationReverseProtocol <NSObject>
 
+@optional
 + (void)reverseAnimation:(UIView *)view;
-
 + (void)stopReverse:(UIView *)view;
+
+- (void)reverseAnimation;
+- (void)stopReverse;
 
 @end
