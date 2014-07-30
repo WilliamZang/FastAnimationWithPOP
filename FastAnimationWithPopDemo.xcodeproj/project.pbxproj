@@ -424,10 +424,7 @@
 				GCC_PREFIX_HEADER = "FastAnimationWithPopDemo/FastAnimationWithPopDemo-Prefix.pch";
 				INFOPLIST_FILE = "FastAnimationWithPopDemo/FastAnimationWithPopDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/FastAnimationWithPop-bokxtissmmsoxtalaqybsrkapgyf/Build/Products/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -443,10 +440,7 @@
 				GCC_PREFIX_HEADER = "FastAnimationWithPopDemo/FastAnimationWithPopDemo-Prefix.pch";
 				INFOPLIST_FILE = "FastAnimationWithPopDemo/FastAnimationWithPopDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/FastAnimationWithPop-bokxtissmmsoxtalaqybsrkapgyf/Build/Products/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
