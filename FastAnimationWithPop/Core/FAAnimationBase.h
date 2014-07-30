@@ -18,4 +18,8 @@
 
 - (void)configView:(UIView *)view;
 
+- (void)bindLifetimeToObject:(UIView *)view;
+
+- (void)releaseLifetimeFromObject:(UIView *)view;
+
 @end

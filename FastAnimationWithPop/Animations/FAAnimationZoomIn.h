@@ -7,11 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FAAnimationBase.h"
 #import "FastAnimationProtocol.h"
-@interface FAAnimationZoomInX : NSObject<FastAnimationProtocol, FastAnimationReverseProtocol>
+
+@interface FAAnimationZoomInBase: FAAnimationBase<FastAnimationProtocol, FastAnimationReverseProtocol>
 
 @end
 
-@interface FAAnimationZoomInY : NSObject<FastAnimationProtocol, FastAnimationReverseProtocol>
+@interface FAAnimationZoomInX : FAAnimationZoomInBase
+
+@end
+
+@interface FAAnimationZoomInY : FAAnimationZoomInBase
 
 @end

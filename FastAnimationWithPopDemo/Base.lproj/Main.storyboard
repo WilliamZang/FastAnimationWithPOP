@@ -14,17 +14,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="7MY-7Q-f7j">
-                                <rect key="frame" x="37" y="351" width="22" height="22"/>
+                                <rect key="frame" x="35" y="351" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="ZoomInX"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                        <real key="value" value="2.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="ie3-Bc-rdF">
                                 <rect key="frame" x="37" y="301" width="123" height="29"/>
@@ -70,12 +64,6 @@
                                 <color key="textColor" red="0.90196084976196289" green="0.18039216101169586" blue="0.50196081399917603" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="ZoomInY"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                        <integer key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q3v-Nt-rKB">
                                 <rect key="frame" x="37" y="143" width="113" height="21"/>
@@ -130,6 +118,26 @@
                         <outlet property="bindingView" destination="ajK-mi-jQa" id="NSF-bL-29c"/>
                     </connections>
                 </customObject>
+                <customObject id="Y0R-1Y-iBf" customClass="FAAnimationZoomInX">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="performAwakeAnimationDelay">
+                            <real key="value" value="2.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="bindingView" destination="7MY-7Q-f7j" id="jhT-q3-b4J"/>
+                    </connections>
+                </customObject>
+                <customObject id="trD-W2-b1e" customClass="FAAnimationZoomInY">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="performAwakeAnimationDelay">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="bindingView" destination="ynm-X8-z0Z" id="5eg-3Y-X2y"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1682" y="-443"/>
         </scene>
@@ -148,9 +156,6 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="bindingAnimationType" value="ButtonScale"/>
-                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -158,6 +163,11 @@
                     <navigationItem key="navigationItem" title="Action binding" id="QAP-HE-KWn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlL-0i-ehS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="hQ4-T9-EeD" customClass="FAAnimationButtonScale">
+                    <connections>
+                        <outlet property="bindingView" destination="mCo-zY-D6a" id="ITZ-KO-6rf"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1682" y="235"/>
         </scene>

@@ -8,44 +8,44 @@
 
 #import "FastAnimationWithPop.h"
 
+@interface FAAnimationZoomOut()
+
+@property (nonatomic, strong) POPSpringAnimation *internalAnimation;
+@property (nonatomic, strong) POPSpringAnimation *internalReverseAnimation;
+
+@end
+
 @implementation FAAnimationZoomOut
-+ (void)performAnimation:(UIView *)view
-{
-    POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
 
-    if ([view valueForKeyPath:kZoomOutScale]) {
-        NSAssert([[view valueForKeyPath:kZoomOutScale] isKindOfClass:NSNumber.class], @"animationParams.scale must be a number.");
-        animation.toValue = [view valueForKeyPath:kZoomOutScale];
-    } else {
-        animation.toValue = [NSValue valueWithCGPoint:CGPointMake(0.8, 0.8)];
-    }
-    animation.springBounciness = 10;
-    if (view.delay > 0) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(view.delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [view.layer pop_addAnimation:animation forKey:@"ZoomOutY"];
-        });
-    } else {
-        [view.layer pop_addAnimation:animation forKey:@"ZoomOutY"];
-    }
-}
-
-+ (void)stopAnimation:(UIView *)view
+- (void)configView:(UIView *)view
 {
-    [view.layer pop_removeAnimationForKey:@"ZoomOutY"];
-}
-
-+ (void)reverseAnimation:(UIView *)view
-{
-    POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
-    animation.toValue = [NSValue valueWithCGPoint:CGPointMake(1, 1)];
-    animation.springBounciness = 10;
-    
-    [view.layer pop_addAnimation:animation forKey:@"ZoomOutYReverse"];
+    [super configView:view];
+    self.internalAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
+    self.internalReverseAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
+    self.internalAnimation.toValue = self.scale ?: [NSValue valueWithCGPoint:CGPointMake(0.8, 0.8)];
+    self.internalAnimation.springBounciness = 10;
+    self.internalReverseAnimation.toValue = self.scale ?: [NSValue valueWithCGPoint:CGPointMake(1, 1)];
+    self.internalReverseAnimation.springBounciness = 10;
     
 }
 
-+ (void)stopReverse:(UIView *)view
+- (void)startAnimation
 {
-    [view.layer pop_removeAnimationForKey:@"ZoomOutYReverse"];
+    [self.bindingView.layer pop_addAnimation:self.internalAnimation forKey:SELF_IDENTIFICATION];
+}
+
+- (void)stopAnimation
+{
+    [self.bindingView.layer pop_removeAnimationForKey:SELF_IDENTIFICATION];
+}
+
+- (void)reverseAnimation
+{
+    [self.bindingView.layer pop_addAnimation:self.internalReverseAnimation forKey:[NSString stringWithFormat:@"-%@", SELF_IDENTIFICATION]];
+}
+
+- (void)stopReverse
+{
+    [self.bindingView.layer pop_removeAnimationForKey:[NSString stringWithFormat:@"-%@", SELF_IDENTIFICATION]];
 }
 @end

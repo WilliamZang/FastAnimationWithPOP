@@ -7,81 +7,88 @@
 //
 #import "FastAnimationWithPop.h"
 
+@interface FAAnimationZoomInBase()
+
+@property (nonatomic, strong) POPSpringAnimation *internalAnimation;
+@property (nonatomic, strong) POPSpringAnimation *internalReverseAnimation;
+
+- (NSString *)animationPropertyNamed;
+- (void)preConfig;
+
+@end
+
+@implementation FAAnimationZoomInBase
+
+- (void)configView:(UIView *)view
+{
+    [super configView:view];
+    self.internalAnimation = [POPSpringAnimation animationWithPropertyNamed:[self animationPropertyNamed]];
+    self.internalReverseAnimation = [POPSpringAnimation animationWithPropertyNamed:[self animationPropertyNamed]];
+    [self preConfig];
+}
+
+- (NSString *)animationPropertyNamed
+{
+    NSAssert(NO, @"implement in subclass");
+    return nil;
+}
+
+- (void)preConfig
+{
+    self.internalAnimation.toValue = @(1.0);
+}
+
+- (void)startAnimation
+{
+    [self.bindingView.layer pop_addAnimation:self.internalAnimation forKey:SELF_IDENTIFICATION];
+}
+
+- (void)stopAnimation
+{
+    [self.bindingView.layer pop_removeAnimationForKey:SELF_IDENTIFICATION];
+}
+
+- (void)reverseAnimation
+{
+    [self.bindingView.layer pop_addAnimation:self.internalReverseAnimation forKey:[NSString stringWithFormat:@"-%@", SELF_IDENTIFICATION]];
+}
+
+- (void)stopReverse
+{
+    [self.bindingView.layer pop_removeAnimationForKey:[NSString stringWithFormat:@"-%@", SELF_IDENTIFICATION]];
+}
+@end
+
+
 @implementation FAAnimationZoomInX
 
-+ (void)performAnimation:(UIView *)view
+- (NSString *)animationPropertyNamed
 {
-    POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleX];
-    view.layer.transform = CATransform3DMakeScale(0.1, 1.0, 1.0);
-    animation.toValue = @(1.0);
-    animation.springBounciness = 10;
-    if (view.delay > 0) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(view.delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [view.layer pop_addAnimation:animation forKey:@"ZoomInX"];
-        });
-    } else {
-        [view.layer pop_addAnimation:animation forKey:@"ZoomInX"];
-    }
+    return kPOPLayerScaleX;
 }
 
-+ (void)stopAnimation:(UIView *)view
+- (void)preConfig
 {
-    [view.layer pop_removeAnimationForKey:@"ZoomInX"];
-}
-
-+ (void)reverseAnimation:(UIView *)view
-{
-    POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleX];
-    animation.toValue = @(0.1);
-    animation.springBounciness = 10;
-    
-    [view.layer pop_addAnimation:animation forKey:@"ZoomInXReverse"];
- 
-}
-
-+ (void)stopReverse:(UIView *)view
-{
-    [view.layer pop_removeAnimationForKey:@"ZoomInXReverse"];
+    [super preConfig];
+    self.bindingView.layer.transform = CATransform3DMakeScale(0.001, 1.0, 1.0);
+    self.internalAnimation.toValue = @(1.0);
+    self.internalReverseAnimation.toValue = @(0.001);
 }
 
 @end
 
 @implementation FAAnimationZoomInY
 
-+ (void)performAnimation:(UIView *)view
+- (NSString *)animationPropertyNamed
 {
-    POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleY];
-    view.layer.transform = CATransform3DMakeScale(1.0, 0.1, 1.0);
-    animation.toValue = @(1.0);
-    animation.springBounciness = 10;
-    if (view.delay > 0) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(view.delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [view.layer pop_addAnimation:animation forKey:@"ZoomInY"];
-        });
-    } else {
-        [view.layer pop_addAnimation:animation forKey:@"ZoomInY"];
-    }
+    return kPOPLayerScaleY;
 }
 
-+ (void)stopAnimation:(UIView *)view
+- (void)preConfig
 {
-    [view.layer pop_removeAnimationForKey:@"ZoomInY"];
+    [super preConfig];
+    self.bindingView.layer.transform = CATransform3DMakeScale(1.0, 0.001, 1.0);
+    self.internalAnimation.toValue = @(1.0);
+    self.internalReverseAnimation.toValue = @(0.001);
 }
-
-+ (void)reverseAnimation:(UIView *)view
-{
-    POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleY];
-    animation.toValue = @(0.1);
-    animation.springBounciness = 10;
-    
-    [view.layer pop_addAnimation:animation forKey:@"ZoomInYReverse"];
-    
-}
-
-+ (void)stopReverse:(UIView *)view
-{
-    [view.layer pop_removeAnimationForKey:@"ZoomInYReverse"];
-}
-
-
 @end

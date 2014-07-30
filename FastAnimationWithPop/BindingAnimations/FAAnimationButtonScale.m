@@ -8,34 +8,43 @@
 
 #import "FastAnimationWithPop.h"
 
-#define kScaleBindingObject  @"animationParams.scaleBindingObject"
+@interface FAAnimationButtonScale()
+
+@property (nonatomic, weak) FAAnimationZoomOut *internalAnimation;
+
+@end
+
 @implementation FAAnimationButtonScale
 
-+ (void)bindingAnimation:(UIControl *)control
+- (void)configView:(UIView *)view
 {
-    id obj = [[FAAnimationButtonScale alloc] init];
-    [control setValue:obj forKeyPath:kScaleBindingObject];
-    [control addTarget:obj action:@selector(touchDown:) forControlEvents:UIControlEventTouchDown];
-    [control addTarget:obj action:@selector(touchUp:) forControlEvents:UIControlEventTouchUpInside|UIControlEventTouchUpOutside];
+    [super configView:view];
+    NSAssert([view isKindOfClass:[UIControl class]], @"bindingView must a control!");
+    FAAnimationZoomOut *animation = [[FAAnimationZoomOut alloc] init];
+    self.internalAnimation = animation;
+    self.internalAnimation.bindingView = view;
+    UIControl *control = (UIControl *)view;
+    [control addTarget:self action:@selector(touchDown:) forControlEvents:UIControlEventTouchDown];
+    [control addTarget:self action:@selector(touchUp:) forControlEvents:UIControlEventTouchUpInside|UIControlEventTouchUpOutside];
+    
 }
 
-+ (void)unbindingAnimation:(UIControl *)control
+- (void)releaseLifetimeFromObject:(UIView *)view
 {
-    id obj = [control valueForKeyPath:kScaleBindingObject];
-    [control removeTarget:obj action:@selector(touchDown:) forControlEvents:UIControlEventTouchDown];
-    [control removeTarget:obj action:@selector(touchUp:) forControlEvents:UIControlEventTouchUpInside|UIControlEventTouchUpOutside];
-
+    UIControl *control = (UIControl *)view;
+    [control removeTarget:self action:@selector(touchDown:) forControlEvents:UIControlEventTouchDown];
+    [control removeTarget:self action:@selector(touchUp:) forControlEvents:UIControlEventTouchUpInside|UIControlEventTouchUpOutside];
 }
 
 - (IBAction)touchDown:(id)sender
 {
-    [FAAnimationZoomOut performAnimation:sender];
+    [self.internalAnimation startAnimation];
 }
 
 - (IBAction)touchUp:(id)sender
 {
-    [FAAnimationZoomOut stopAnimation:sender];
-    [FAAnimationZoomOut reverseAnimation:sender];
+    [self.internalAnimation stopAnimation];
+    [self.internalAnimation reverseAnimation];
 }
 
 @end

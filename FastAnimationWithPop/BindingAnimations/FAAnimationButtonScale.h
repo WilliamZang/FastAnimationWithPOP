@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FAAnimationBase.h"
 #import "FastAnimationProtocol.h"
 
-@interface FAAnimationButtonScale : NSObject<ControlFastAnimationProtocol>
+@interface FAAnimationButtonScale : FAAnimationBase
 
 @end

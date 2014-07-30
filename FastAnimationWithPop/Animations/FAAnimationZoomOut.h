@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FAAnimationBase.h"
 #import "FastAnimationProtocol.h"
 
-#define kZoomOutScale   (@"animationParams.scale")
-@interface FAAnimationZoomOut : NSObject <FastAnimationProtocol, FastAnimationReverseProtocol>
+@interface FAAnimationZoomOut : FAAnimationBase <FastAnimationProtocol, FastAnimationReverseProtocol>
 
+@property (nonatomic, strong) IBInspectable NSNumber *scale;
 
 @end
