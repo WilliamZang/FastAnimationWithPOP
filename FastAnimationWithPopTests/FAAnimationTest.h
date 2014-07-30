@@ -7,15 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FAAnimationBase.h"
 #import "FastAnimationProtocol.h"
-@interface FAAnimationTest : NSObject<FastAnimationProtocol>
+@interface FAAnimationTest : FAAnimationBase<FastAnimationProtocol>
 
-+ (BOOL)animationHasPerform;
-+ (void)resetHasPerform;
+- (BOOL)animationHasPerform;
+
 @end
 
 @interface FAAnimationTestReverse : FAAnimationTest<FastAnimationReverseProtocol>
 
-+ (BOOL)reverseAnimationHasPerform;
+- (BOOL)reverseAnimationHasPerform;
 
 @end

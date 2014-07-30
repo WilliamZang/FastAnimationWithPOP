@@ -8,46 +8,41 @@
 
 #import "FAAnimationTest.h"
 
-static BOOL g_animationHasPerform = NO;
-static BOOL g_reverseAnimationHasPerform = NO;
+@interface FAAnimationTest()
+@property (nonatomic, assign) BOOL animationHasPerform;
+
+@end
+
+@interface FAAnimationTestReverse()
+@property (nonatomic, assign) BOOL reverseAnimationHasPerform;
+
+@end
+
+
 @implementation FAAnimationTest
 
-+ (BOOL)animationHasPerform
+- (void)startAnimation
 {
-    return g_animationHasPerform;
+    self.animationHasPerform = YES;
 }
 
-+ (void)performAnimation:(id)view
-{
-    g_animationHasPerform = YES;
-}
-
-+ (void)stopAnimation:(UIView *)view
+- (void)stopAnimation
 {
 
 }
 
-+ (void)resetHasPerform
-{
-    g_animationHasPerform = NO;
-    g_reverseAnimationHasPerform = NO;
-}
 @end
 
 @implementation FAAnimationTestReverse
 
-+ (BOOL)reverseAnimationHasPerform
+- (void)reverseAnimation
 {
-    return g_reverseAnimationHasPerform;
+    self.reverseAnimationHasPerform = YES;
 }
 
-+ (void)reverseAnimation:(UIView *)view
-{
-    g_reverseAnimationHasPerform = YES;
-}
-
-+ (void)stopReverse:(UIView *)view
+- (void)stopReverse
 {
     
 }
+
 @end
