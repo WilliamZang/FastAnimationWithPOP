@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FAAnimationBase.h"
 #import "FastAnimationProtocol.h"
 
-#define kShakeVelocity      (@"animationParams.velocity")
+@interface FAAnimationShake : FAAnimationBase<FastAnimationProtocol>
 
-@interface FAAnimationShake : NSObject<FastAnimationProtocol>
+@property (nonatomic, strong) IBInspectable NSNumber *velocity;
 
 @end

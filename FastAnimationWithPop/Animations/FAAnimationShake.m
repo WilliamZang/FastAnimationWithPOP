@@ -7,24 +7,28 @@
 //
 #import "FastAnimationWithPop.h"
 
+@interface FAAnimationShake()
+
+@property (nonatomic, strong) POPSpringAnimation *internalAnimation;
+
+@end
 @implementation FAAnimationShake
 
-+ (void)performAnimation:(UIView *)view
+- (void)configView:(UIView *)view
 {
-    POPSpringAnimation *animation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
-    animation.velocity = [view valueForKeyPath:kShakeVelocity] ? [view valueForKeyPath:kShakeVelocity] : @2000;
-    animation.springBounciness = 20;
-    if (view.delay > 0) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(view.delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [view.layer pop_addAnimation:animation forKey:@"Shake"];
-        });
-    } else {
-        [view.layer pop_addAnimation:animation forKey:@"Shake"];
-    }
+    [super configView:view];
+    self.internalAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
+    self.internalAnimation.velocity = self.velocity ?: @2000;
+    self.internalAnimation.springBounciness = 20;
 }
 
-+ (void)stopAnimation:(UIView *)view
+- (void)startAnimation
 {
-    [view.layer pop_removeAnimationForKey:@"Shake"];
+    [self.bindingView.layer pop_addAnimation:self.internalAnimation forKey:SELF_IDENTIFICATION];
+}
+
+- (void)stopAnimation
+{
+    [self.bindingView.layer pop_removeAnimationForKey:SELF_IDENTIFICATION];
 }
 @end

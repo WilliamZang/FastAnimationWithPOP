@@ -47,12 +47,6 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.11764706671237946" green="0.87843143939971924" blue="0.5215686559677124" alpha="1" colorSpace="deviceRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Shake"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="animationParams.velocity">
-                                        <integer key="value" value="-7000"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" id="vMN-tc-vvc">
                                 <rect key="frame" x="37" y="184" width="94" height="91"/>
@@ -124,6 +118,16 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="bindingView" destination="vMN-tc-vvc" id="dvc-eu-6ET"/>
+                    </connections>
+                </customObject>
+                <customObject id="gjp-Iz-JOD" customClass="FAAnimationShake">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="velocity">
+                            <integer key="value" value="-7000"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="bindingView" destination="ajK-mi-jQa" id="NSF-bL-29c"/>
                     </connections>
                 </customObject>
             </objects>
