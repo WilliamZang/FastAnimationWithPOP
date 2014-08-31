@@ -26,21 +26,21 @@ XCode version: 5.0+
 ## Install
 The easiest way to install FastAnimation is using [CocoaPods](http://cocoadocs.org):
 
-1. Add the pod to podfile `pod 'FastAnimation'`
+1. Add the pod to podfile `pod 'FastAnimationWithPOP'`
 
 2. Refresh your project pods `pod install`
 
-If you want to see the new features, you can add pod `pod 'FastAnimation', :head` to fetch the newest version.
+If you want to see the new features, you can add pod `pod 'FastAnimationWithPOP', :head` to fetch the newest version.
 
 ## Usage
 
-### 1. Use it with stroy board
+### 1. Use it with a storyboard
 
 You can add an animation to a view by setup the user defined runtime attributes.
 
-![StroyBoard1](https://raw.githubusercontent.com/WilliamZang/FastAnimationWithPOP/master/Docs/stroyBoard1.png)
+![Storyboard1](https://raw.githubusercontent.com/WilliamZang/FastAnimationWithPOP/master/Docs/stroyBoard1.png)
 
-![StroyBoard2](https://raw.githubusercontent.com/WilliamZang/FastAnimationWithPOP/master/Docs/stroyBoard2.png)
+![Storyboard2](https://raw.githubusercontent.com/WilliamZang/FastAnimationWithPOP/master/Docs/stroyBoard2.png)
 
 Here's some property's meaning:
 
@@ -82,7 +82,7 @@ Here's some property's meaning:
 
 ### 2. Use it by coding
 
-To use it by coding is as simply as using the stroy board.
+To use it by coding is as simple as using the storyboard.
 
 You can just set the animation type property and perform ```- (void)startFAAnimation```. Like this
 
