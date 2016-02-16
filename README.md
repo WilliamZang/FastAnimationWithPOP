@@ -21,7 +21,7 @@ You can see the DEMO in project [DEMO](https://github.com/WilliamZang/FastAnimat
 
 Minimum iOS Target: iOS 6.0+
 
-XCode version: 5.0+
+Xcode version: 5.0+
 
 ## Install
 The easiest way to install FastAnimation is using [CocoaPods](http://cocoadocs.org):
